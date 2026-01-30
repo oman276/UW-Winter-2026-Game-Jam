@@ -11,5 +11,17 @@ config_version=5
 [application]
 
 config/name="UW-W26-Jam"
+run/main_scene="uid://1f0n25pmk3c7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://game/scenes/censor_game_manager.tscn"
+
+[input]
+
+reload_current_level={
+"deadzone": 0.2,
+"events": []
+}
