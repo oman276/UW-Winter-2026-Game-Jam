@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://1f0n25pmk3c7"]
 
-[node name="EmptyTestScene" type="Node2D"]
+[ext_resource type="Script" uid="uid://bjhblisf2d7xt" path="res://addons/owens-godot-framework/tools/scripts/level-elements/owen_level.gd" id="1_oka5v"]
+
+[node name="EmptyTestScene" type="Node2D" unique_id=266287186]
+script = ExtResource("1_oka5v")
+level_name = "EmptyTest Level"
