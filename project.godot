@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 GameManager="*res://game/scenes/censor_game_manager.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 reload_current_level={
