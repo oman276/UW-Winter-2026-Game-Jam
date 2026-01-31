@@ -17,7 +17,6 @@ func set_ink_color(color: Color):
 func handle_draw_input(event: InputEvent, local_pos: Vector2) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			print("%s drawing triggered" % debug_name)
 
 			if !_pressed:
 				_current_line = Line2D.new()
@@ -36,7 +35,6 @@ func handle_draw_input(event: InputEvent, local_pos: Vector2) -> void:
 	elif event is InputEventMouseMotion and _pressed:
 		if _current_line:
 			_current_line.add_point(local_pos)
-			print("added point to %s" % debug_name)
 
 ## Legacy method for backwards compatibility
 func input(event: InputEvent) -> void:
