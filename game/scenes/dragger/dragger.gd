@@ -6,14 +6,26 @@ var hovering := false
 var draggingDistance: float
 var direction := Vector2()
 
-func _input(event):
+@export var attachedSprite: Sprite2D
+
+@export var soundPlayer: AudioStreamPlayer2D
+
+
+func _gui_input(event):
 	if event is InputEventMouseButton:
+		print(attachedSprite.name)
 		if hovering and event.is_pressed():
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			direction = (get_viewport().get_mouse_position() - position).normalized()
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * direction
 			dragging = true
+			
+			self.move_to_front()
+			attachedSprite.scale *= 1.05
+			soundPlayer.stream = load("res://game/sounds/put_down.mp3")
+			soundPlayer.play()
 		else:
+			attachedSprite.scale /= 1.05
 			dragging = false
 
 	elif event is InputEventMouseMotion:
