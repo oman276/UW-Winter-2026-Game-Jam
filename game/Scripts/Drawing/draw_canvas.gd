@@ -2,10 +2,14 @@ extends Node2D
 
 @export var line_texture : Texture2D
 
-var _ink_color := Color.RED
-var _line_width := 6.0
+@export var _ink_color := Color.RED
+@export var line_width := 10.0
 var _pressed := false
 var _current_line: Line2D = null
+## Set to true to allow this canvas to receive input via _input()
+@export var use_direct_input := false
+
+var debug_name := "DrawCanvas"
 
 func set_ink_color(color: Color) -> void:
 	_ink_color = color
@@ -13,7 +17,8 @@ func set_ink_color(color: Color) -> void:
 func set_line_width(width: float) -> void:
 	_line_width = width
 
-func _input(event: InputEvent) -> void:
+## Call this from a parent to forward input with a local position
+func handle_draw_input(event: InputEvent, local_pos: Vector2) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 
@@ -27,10 +32,10 @@ func _input(event: InputEvent) -> void:
 				_current_line.end_cap_mode = Line2D.LINE_CAP_ROUND
 				_current_line.joint_mode = Line2D.LINE_JOINT_ROUND
 				_current_line.default_color = _ink_color
-				_current_line.width = _line_width
+				_current_line.width = line_width
 				add_child(_current_line)
-				_current_line.add_point(event.position)
-				#_current_line.add_point(event.position)
+				_current_line.add_point(local_pos)
+				_current_line.add_point(local_pos)
 				
 			_pressed = event.pressed
 		
@@ -38,15 +43,20 @@ func _input(event: InputEvent) -> void:
 			clear_canvas()
 
 	elif event is InputEventMouseMotion and _pressed:
-		if _current_line and _current_line.get_point_position(_current_line.get_point_count()-1).distance_to(event.position) > 5:
-			_current_line.add_point(event.position)
+		if _current_line:
+			_current_line.add_point(local_pos)
+
+## Legacy method for backwards compatibility
+func input(event: InputEvent) -> void:
+	handle_draw_input(event, event.position)
+
+func _input(event: InputEvent) -> void:
+	if !use_direct_input:
+		return
+	handle_draw_input(event, event.position)
 
 func clear_canvas():
 	_current_line = null
 	for n in get_children():
 			remove_child(n)
 			n.queue_free()
-
-#func _draw() -> void:
-	#for i in range(len(_click_pos)):
-		#draw_line(_click_pos[max(i-1,0)], _click_pos[i], Color.RED, 10)

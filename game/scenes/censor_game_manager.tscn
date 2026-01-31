@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://brsdutd5yyipp"]
+[gd_scene format=3 uid="uid://brsdutd5yyipp"]
 
 [ext_resource type="PackedScene" uid="uid://o4iyp1u4haag" path="res://addons/owens-godot-framework/tools/scenes/systems/OwenGameManager.tscn" id="1_fwnex"]
 [ext_resource type="PackedScene" uid="uid://cmofbo13qg4di" path="res://addons/owens-godot-framework/test_game_data/scenes/test_scene.tscn" id="2_agqlj"]
 [ext_resource type="PackedScene" uid="uid://iem6hkyihhap" path="res://addons/owens-godot-framework/test_game_data/scenes/test_scene_topdown.tscn" id="3_u702p"]
-[ext_resource type="PackedScene" uid="uid://1f0n25pmk3c7" path="res://game/scenes/EmptyTestScene.tscn" id="4_k17o3"]
+[ext_resource type="PackedScene" uid="uid://1f0n25pmk3c7" path="res://game/scenes/TestScene.tscn" id="4_k17o3"]
 
-[node name="CensorGameManager" instance=ExtResource("1_fwnex")]
+[node name="CensorGameManager" unique_id=1714877070 instance=ExtResource("1_fwnex")]
 level_path_dict = Dictionary[String, PackedScene]({
 "Empty Test Level": ExtResource("4_k17o3"),
 "Platformer Test Level": ExtResource("2_agqlj"),

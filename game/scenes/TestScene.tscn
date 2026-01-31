@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://1f0n25pmk3c7"]
+
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_oka5v"]
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="2_hkm4w"]
+
+[node name="EmptyTestScene" type="Node2D" unique_id=266287186]
+script = ExtResource("1_oka5v")
+
+[node name="BaseFile" parent="." unique_id=816497170 instance=ExtResource("2_hkm4w")]
+custom_minimum_size = Vector2(200, 200)
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 346.776
+offset_top = 211.884
+offset_right = 346.776
+offset_bottom = 211.884
