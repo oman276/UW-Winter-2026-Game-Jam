@@ -15,7 +15,7 @@ func set_ink_color(color: Color) -> void:
 	_ink_color = color
 	
 func set_line_width(width: float) -> void:
-	_line_width = width
+	line_width = width
 
 ## Call this from a parent to forward input with a local position
 func handle_draw_input(event: InputEvent, local_pos: Vector2) -> void:
