@@ -12,7 +12,8 @@ func _ready() -> void:
 	
 	# Connect to panel's gui_input to intercept all mouse events
 	panel.gui_input.connect(_on_panel_gui_input)
-	panel.mouse_filter = Control.MOUSE_FILTER_STOP
+	# Use MOUSE_FILTER_PASS so input also propagates to parent (e.g., Dragger)
+	panel.mouse_filter = Control.MOUSE_FILTER_PASS
 
 	for item in panel.get_children():
 		if item is FileElement:

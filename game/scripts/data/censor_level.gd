@@ -4,8 +4,9 @@ class_name CensorLevel
 @export var attributes_must_exclude : Array[Attribute] = []
 @export var attributes_must_include : Array[Attribute] = []
 
-@export var files_to_load : Array[PackedScene] = [
-]
+
+@export var pickup_audioplayer : AudioStreamPlayer2D
+@export var files_to_load : Array[PackedScene] = []
 
 @onready var rng = RandomNumberGenerator.new()
 
@@ -82,6 +83,4 @@ func evaluate_file(file:File) -> FileResult:
 		else: result.unmarked_correct.append(attribute)
 			
 	return result
-	
-			
 	
