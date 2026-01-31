@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4kbw0csogdau" path="res://game/scripts/files/file.gd" id="1_tovee"]
 [ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="2_21myl"]
-[ext_resource type="PackedScene" uid="uid://ca2gutxl0nrvb" path="res://game/scenes/drawing/draw_viewport_container.tscn" id="3_21myl"]
+[ext_resource type="PackedScene" uid="uid://ca2gutxl0nrvb" path="res://game/scenes/Drawing/draw_viewport_container.tscn" id="3_21myl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tovee"]
 bg_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
@@ -20,6 +20,7 @@ offset_bottom = -0.23200989
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+mouse_filter = 1
 script = ExtResource("1_tovee")
 
 [node name="Panel" type="Panel" parent="." unique_id=2090312253]
