@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="UW-W26-Jam"
-run/main_scene="uid://b34m3x7vibrlo"
+run/main_scene="uid://clci5lpjmykq8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
