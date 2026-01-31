@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
-[ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
+[ext_resource type="Script" path="res://game/scenes/level_manager.gd" id="11_reirr"]
+[ext_resource type="Texture2D" uid="uid://b8oa7krgpvun" path="res://game/sprites/static.png" id="13_n2ao8"]
 
 [node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
@@ -25,6 +26,7 @@ scale = Vector2(0.6064815, 0.6064815)
 texture = ExtResource("2_1gvmw")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2000384918]
+visible = false
 modulate = Color(1, 0, 1, 1)
 position = Vector2(265, 248)
 rotation = 2.4240887
@@ -140,5 +142,12 @@ position = Vector2(0, 1.5258789e-05)
 
 [node name="LevelManager" type="Node2D" parent="." unique_id=664034252]
 script = ExtResource("11_reirr")
+
+[node name="Static" type="Sprite2D" parent="." unique_id=1651594393]
+visible = false
+z_index = 2
+position = Vector2(580, 513)
+scale = Vector2(0.58802086, 0.5810305)
+texture = ExtResource("13_n2ao8")
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]
