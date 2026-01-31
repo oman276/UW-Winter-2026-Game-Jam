@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="4_s6sjy"]
 [ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="6_7ka50"]
 [ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="7_1nvu5"]
+[ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
+[ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
 
 [node name="MainScene" type="Node2D" unique_id=233102018]
 script = ExtResource("1_fbms8")
 
 [node name="Wood_Sprite" type="Sprite2D" parent="." unique_id=475077457]
+z_index = -2
 position = Vector2(582, 327.00003)
 scale = Vector2(0.6064815, 0.6064815)
 texture = ExtResource("2_1gvmw")
@@ -27,26 +30,108 @@ energy = 1.5
 texture = ExtResource("3_v0lsd")
 
 [node name="Scissors" type="Sprite2D" parent="." unique_id=1055096874]
+visible = false
 position = Vector2(1006, 472)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_34woh")
 
-[node name="MagnifyingGlass" type="Sprite2D" parent="." unique_id=540031040]
-position = Vector2(183, 482)
+[node name="Files" type="Sprite2D" parent="." unique_id=1232658929]
+z_index = -1
+position = Vector2(117.00001, 149)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_s6sjy")
+texture = ExtResource("10_ewyar")
 
-[node name="Marker" type="Sprite2D" parent="." unique_id=1196223467]
-position = Vector2(996.00006, 146)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_7ka50")
+[node name="CoffeeObject" parent="." unique_id=2032655032 node_paths=PackedStringArray("attachedSprite", "soundPlayer") instance=ExtResource("8_1nvu5")]
+offset_left = 913.0
+offset_top = 351.0
+offset_right = 953.0
+offset_bottom = 391.0
+attachedSprite = NodePath("ColorRect/Coffee")
+soundPlayer = NodePath("../AudioStreamPlayer2D")
 
-[node name="Coffee" type="Sprite2D" parent="." unique_id=1631971333]
-position = Vector2(679, 453)
+[node name="ColorRect" type="ColorRect" parent="CoffeeObject" unique_id=1202184930]
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 298.0
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="Coffee" type="Sprite2D" parent="CoffeeObject/ColorRect" unique_id=1631971333]
+position = Vector2(153, 141)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_1nvu5")
 
-[node name="NixieClock" type="Sprite2D" parent="." unique_id=193806897]
-position = Vector2(358, 162)
-scale = Vector2(0.6, 0.6)
+[node name="ClockObject" parent="." unique_id=783378228 node_paths=PackedStringArray("attachedSprite", "soundPlayer") instance=ExtResource("8_1nvu5")]
+process_priority = 1
+process_physics_priority = 1
+custom_minimum_size = Vector2(5, 5)
+offset_left = 599.0
+offset_right = 639.0
+mouse_behavior_recursive = 2
+attachedSprite = NodePath("ColorRect/NixieClock")
+soundPlayer = NodePath("../AudioStreamPlayer2D")
+
+[node name="ColorRect" type="ColorRect" parent="ClockObject" unique_id=1482504186]
+layout_mode = 0
+offset_left = -12.353591
+offset_top = 58.388275
+offset_right = 27.562222
+offset_bottom = 88.132256
+rotation = -0.17030975
+scale = Vector2(10, 4.6)
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="NixieClock" type="Sprite2D" parent="ClockObject/ColorRect" unique_id=193806897]
+position = Vector2(20.868168, 14.995361)
+rotation = 0.35777104
+scale = Vector2(0.063129306, 0.12894931)
+skew = -0.2788266
 texture = ExtResource("8_7ka50")
+
+[node name="MarkerObject" parent="." unique_id=1728798680 node_paths=PackedStringArray("attachedSprite", "soundPlayer") instance=ExtResource("8_1nvu5")]
+attachedSprite = NodePath("ColorRect/Marker")
+soundPlayer = NodePath("../AudioStreamPlayer2D")
+
+[node name="ColorRect" type="ColorRect" parent="MarkerObject" unique_id=1339194605]
+layout_mode = 0
+offset_left = 8.647835
+offset_top = 186.02626
+offset_right = 327.9275
+offset_bottom = 260.5869
+rotation = -0.5325899
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="Marker" type="Sprite2D" parent="MarkerObject/ColorRect" unique_id=1196223467]
+position = Vector2(172.42163, 33.109436)
+rotation = 0.5325899
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_7ka50")
+
+[node name="MagnifyingObject" parent="." unique_id=129258017 node_paths=PackedStringArray("attachedSprite", "soundPlayer") instance=ExtResource("8_1nvu5")]
+offset_top = 333.0
+offset_bottom = 373.0
+attachedSprite = NodePath("ColorRect/MagnifyingGlass")
+soundPlayer = NodePath("../AudioStreamPlayer2D")
+
+[node name="ColorRect" type="ColorRect" parent="MagnifyingObject" unique_id=860671419]
+layout_mode = 0
+offset_left = -50.98809
+offset_top = 218.52937
+offset_right = 311.11118
+offset_bottom = 372.4735
+rotation = -0.62917244
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="MagnifyingGlass" type="Sprite2D" parent="MagnifyingObject/ColorRect" unique_id=540031040]
+position = Vector2(218.70834, 68.24269)
+rotation = 0.62917244
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_s6sjy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2078087875]
+position = Vector2(0, 1.5258789e-05)
+
+[connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]

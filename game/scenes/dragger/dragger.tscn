@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ckdlvn51bopau"]
+
+[ext_resource type="Script" uid="uid://db2n0t4f6kb8y" path="res://game/scenes/dragger/dragger.gd" id="1_c3mgs"]
+
+[node name="Dragger" type="Control" unique_id=1728798680]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c3mgs")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
