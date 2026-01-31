@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bng6mi3uxpxlw"]
+
+[ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="1_aurq8"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="2_a7mg2"]
+[ext_resource type="Resource" uid="uid://c406n6fupsmfl" path="res://game/Attributes/red_guy.tres" id="3_vapuu"]
+[ext_resource type="PackedScene" uid="uid://by4ve60tao2ap" path="res://game/scenes/files/test_file_1.tscn" id="4_e38ob"]
+
+[node name="MainScene" unique_id=233102018 instance=ExtResource("1_aurq8")]
+attributes_must_exclude = Array[ExtResource("2_a7mg2")]([ExtResource("3_vapuu")])
+files_to_load = Array[PackedScene]([ExtResource("4_e38ob")])
+next_level = "day_2_level"

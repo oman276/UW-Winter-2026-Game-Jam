@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://iem6hkyihhap" path="res://addons/owens-godot-framework/test_game_data/scenes/test_scene_topdown.tscn" id="3_u702p"]
 [ext_resource type="PackedScene" uid="uid://b34m3x7vibrlo" path="res://game/scenes/EmptyTestScene.tscn" id="4_k17o3"]
 [ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="5_u702p"]
+[ext_resource type="PackedScene" uid="uid://bng6mi3uxpxlw" path="res://game/scenes/Levels/level_day_1.tscn" id="6_bt47q"]
+[ext_resource type="PackedScene" uid="uid://ctjk7fxtfdwok" path="res://game/scenes/Levels/level_day_2.tscn" id="7_b7if7"]
 
 [node name="CensorGameManager" unique_id=1714877070 instance=ExtResource("1_fwnex")]
 level_path_dict = Dictionary[String, PackedScene]({
@@ -12,6 +14,8 @@ level_path_dict = Dictionary[String, PackedScene]({
 "Empty Test Level": ExtResource("4_k17o3"),
 "Platformer Test Level": ExtResource("2_agqlj"),
 "Top Down Test Level": ExtResource("3_u702p"),
+"day_1_level": ExtResource("6_bt47q"),
+"day_2_level": ExtResource("7_b7if7"),
 "default_level": ExtResource("5_u702p")
 })
-initial_level = "default_level"
+initial_level = "day_1_level"

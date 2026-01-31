@@ -8,6 +8,8 @@ class_name CensorLevel
 @export var pickup_audioplayer : AudioStreamPlayer2D
 @export var files_to_load : Array[PackedScene] = []
 
+@export var next_level : String
+
 @onready var rng = RandomNumberGenerator.new()
 
 var loaded_files : Array[File] = []
@@ -26,6 +28,9 @@ func add_files() -> void:
 								100 + rng.randf_range(0, 0.6*screen_size.y))
 		file.size = Vector2(200,200)
 		
+func end_level() -> void:
+	if next_level: GameManager.load_level(next_level)
+		
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action("check_results"):
@@ -39,7 +44,7 @@ func _input(event: InputEvent) -> void:
 			print("Unmarked [correct]: {arr}".format({"arr": result.unmarked_correct}))
 			print("Marked [incorrect]: {arr}".format({"arr": result.marked_incorrect}))
 			print("Unmarked [incorrect]: {arr}".format({"arr": result.unmarked_incorrect}))
-			
+		end_level()		
 		
 class FileResult:
 	var file_name: String
