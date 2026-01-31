@@ -1,9 +1,8 @@
 extends OwenLevel
-class_name CensorLevel
+class_name CensorLevel 
 
 @export var attributes_must_exclude : Array[Attribute] = []
 @export var attributes_must_include : Array[Attribute] = []
-
 
 @export var pickup_audioplayer : AudioStreamPlayer2D
 @export var files_to_load : Array[PackedScene] = []
@@ -19,16 +18,30 @@ func add_files() -> void:
 	var screen_size := get_viewport().get_visible_rect().size
 	
 	for file_packed in files_to_load:
-		var file : File = file_packed.instantiate()
+		var instance = file_packed.instantiate()
+		var file : File
+		if instance is File:
+			file = instance
+		else:
+			for child in instance.get_children():
+				if child is File:
+					file = child
+					break
+		
+		if not file:
+			push_error("CensorLevel: Could not find File node in packed scene!")
+			break
+
+		# var file : File = file_packed.instantiate()
 		loaded_files.append(file)
-		add_child(file)
-		file.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
+		add_child(instance)
+		instance.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
 								100 + rng.randf_range(0, 0.6*screen_size.y))
-		file.size = Vector2(200,200)
+		instance.size = Vector2(200,200)
 		
 func _input(event: InputEvent) -> void:
 	
-	if event.is_action("check_results"):
+	if event.is_action("check_results") and event.is_pressed():
 		var results := evaluate_all_files()
 		print("Evaluation of Files")
 		for result in results:

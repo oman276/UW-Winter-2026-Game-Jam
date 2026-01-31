@@ -1,4 +1,5 @@
 extends Control
+class_name Dragger
 
 var dragging := false
 var newPosition := Vector2()
@@ -11,9 +12,7 @@ var direction := Vector2()
 @export var soundPlayer: AudioStreamPlayer2D
 
 func _gui_input(event):
-	print("recieved gui input: " + str(self.name))
 	if event is InputEventMouseButton:
-		print("mouse input yay: " + str(self.name))
 		if hovering and event.is_pressed():
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			direction = (get_viewport().get_mouse_position() - position).normalized()
@@ -39,18 +38,15 @@ func _physics_process(_delta: float) -> void:
 		position = newPosition
 
 func _on_mouse_exited() -> void:
-	print("mouse exited: " + str(self.name))
 	hovering = false
 
 func _on_mouse_entered() -> void:
-	print("mouse entered: " + str(self.name))
 	hovering = true
 
 func _process(_delta: float) -> void:
 	pass
 
 func _ready() -> void:
-	print("Dragger ready: " + str(self.name))
 	var current_level = GameManager.get_current_level_node() as CensorLevel
 	if current_level:
 		soundPlayer = current_level.pickup_audioplayer
