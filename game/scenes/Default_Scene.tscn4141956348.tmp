@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
-[ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
 
 [node name="MainScene" type="Node2D" unique_id=233102018]
 script = ExtResource("1_fbms8")
@@ -134,8 +133,5 @@ texture = ExtResource("4_s6sjy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2078087875]
 position = Vector2(0, 1.5258789e-05)
-
-[node name="LevelManager" type="Node2D" parent="." unique_id=664034252]
-script = ExtResource("11_reirr")
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3 uid="uid://b6fp07ok1d3u8"]
+
+[ext_resource type="Script" uid="uid://bwom7kub26k18" path="res://addons/godot_dialogue_manager-eef8441c8f7e9355cad3070ae6c8fde7005ca9e9/godot_dialogue_manager-eef8441c8f7e9355cad3070ae6c8fde7005ca9e9/addons/dialogue_manager/dialogue_resource.gd" id="1_5xy8g"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_5xy8g")
+using_states = PackedStringArray("hi")
+character_names = PackedStringArray()
+metadata/_custom_type_script = "uid://bwom7kub26k18"

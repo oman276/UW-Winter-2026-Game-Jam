@@ -1,0 +1,4 @@
+~ radio_dialogue
+Nathan: [wave]hello[/wave], this is some dialogue.
+Nathan: Here are some choices[wait=2] cool right?
+=> END
