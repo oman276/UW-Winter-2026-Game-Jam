@@ -12,3 +12,6 @@ func _ready() -> void:
 
 func clear_drawing():
 	$DrawContainer/SubViewport/DrawCanvas.clear_canvas()
+	
+func get_drawing() -> BitMap:
+	return draw_container.get_drawing()
