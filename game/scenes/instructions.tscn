@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cml04fh3i0mw0"]
+
+[ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="2_fq3fb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c4yo4"]
+load_path = "res://.godot/imported/instruction_paper.png-9b7dc374c541be8d384ff49d1dbae0e8.ctex"
+
+[node name="Instructions" type="Node2D" unique_id=1561055183]
+
+[node name="Label" type="Label" parent="." unique_id=1914640731]
+z_index = 1
+offset_left = 81.0
+offset_top = 59.0
+offset_right = 589.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("2_fq3fb")
+theme_override_font_sizes/font_size = 18
+text = "Welcome to the Ministry of Truth. I hope your transfer has been going smoothly.
+
+You will find that the day to day is quite simple. You will work from 09:00 to 17:00. You are to maintain truth and order, and to remove the despicable lies that plague this great country. Every day you will be given records and media relevant to current events. You are to maintain a consistent truth in all papers. 
+
+Please use the approved tools provided, including the blackout marker and magnifying glass. You are permitted to bring a beverage if you desire.
+
+When you are finished, please put your files in the metal filing cabinet you will find in the top left of your desk. Somebody will come pick them up at day's end.
+
+Glory to the people"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2064517360]
+offset_right = 950.0
+offset_bottom = 950.0
+rotation = -0.017453292
+scale = Vector2(0.6793018, 0.6793018)
+texture = SubResource("CompressedTexture2D_c4yo4")
