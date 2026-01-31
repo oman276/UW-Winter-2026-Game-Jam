@@ -18,13 +18,12 @@ scale = Vector2(0.6064815, 0.6064815)
 texture = ExtResource("2_1gvmw")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2000384918]
-visible = false
 modulate = Color(1, 0, 1, 1)
-position = Vector2(223, 253)
+position = Vector2(265, 248)
 rotation = 2.4240887
-scale = Vector2(1.1389508, 0.57483083)
+scale = Vector2(1.1389508, 1.34377)
 color = Color(0.38431373, 0.6392157, 0.13725491, 1)
-energy = 2.22
+energy = 1.5
 texture = ExtResource("3_v0lsd")
 
 [node name="Scissors" type="Sprite2D" parent="." unique_id=1055096874]
@@ -48,6 +47,6 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_1nvu5")
 
 [node name="NixieClock" type="Sprite2D" parent="." unique_id=193806897]
-position = Vector2(255, 134.00003)
+position = Vector2(358, 162)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_7ka50")

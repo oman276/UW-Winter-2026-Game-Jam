@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b34m3x7vibrlo"]
+
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_oka5v"]
+
+[node name="EmptyTestScene" type="Node2D" unique_id=266287186]
+script = ExtResource("1_oka5v")
