@@ -9,6 +9,10 @@ class_name FileElement
 func _ready() -> void:
 	viewport.set_debug_name(element_name)
 
+## Forward draw input to this element's viewport container
+func handle_draw_input(event: InputEvent, global_pos: Vector2) -> void:
+	viewport.handle_draw_input(event, global_pos)
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("debug_check_bitmap_status"):
 		var map : BitMap = viewport.get_drawing()

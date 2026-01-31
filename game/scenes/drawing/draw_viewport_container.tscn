@@ -15,9 +15,9 @@ script = ExtResource("1_y5qm2")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1390636633]
 transparent_bg = true
 handle_input_locally = false
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="DrawCanvas" type="Node2D" parent="SubViewport" unique_id=1023340742]
 script = ExtResource("2_epe2o")
 _ink_color = Color(0.02286219, 1.0904623e-08, 3.008172e-09, 1)
-line_width = 10

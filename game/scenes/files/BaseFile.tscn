@@ -31,14 +31,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(20, 20)
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_tovee")
-
-[node name="Element" parent="Panel" unique_id=1151123996 instance=ExtResource("2_21myl")]
-layout_mode = 0
-offset_left = 63.0
-offset_top = 60.0
-offset_right = 64.0
-offset_bottom = 61.0
 
 [node name="DrawViewportContainer" parent="Panel" unique_id=522254512 instance=ExtResource("3_21myl")]
 layout_mode = 1
+
+[node name="Element" parent="Panel" unique_id=1151123996 instance=ExtResource("2_21myl")]
+z_index = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 63.0
+offset_top = 60.0
+offset_right = 163.0
+offset_bottom = 160.0
