@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://di7waos42g3hs"]
+
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_fbms8"]
+[ext_resource type="Texture2D" uid="uid://by0s2p0ir8jw2" path="res://game/sprites/wood_backdrop.jpg" id="2_1gvmw"]
+[ext_resource type="Texture2D" uid="uid://cswuki0f3vgu5" path="res://game/sprites/10861471.png" id="3_v0lsd"]
+[ext_resource type="Texture2D" uid="uid://crr0sm6hrga1x" path="res://game/sprites/scissors.png" id="4_34woh"]
+[ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="4_s6sjy"]
+[ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="6_7ka50"]
+[ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="7_1nvu5"]
+[ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
+
+[node name="MainScene" type="Node2D" unique_id=233102018]
+script = ExtResource("1_fbms8")
+
+[node name="Wood_Sprite" type="Sprite2D" parent="." unique_id=475077457]
+position = Vector2(582, 327.00003)
+scale = Vector2(0.6064815, 0.6064815)
+texture = ExtResource("2_1gvmw")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2000384918]
+visible = false
+modulate = Color(1, 0, 1, 1)
+position = Vector2(223, 253)
+rotation = 2.4240887
+scale = Vector2(1.1389508, 0.57483083)
+color = Color(0.38431373, 0.6392157, 0.13725491, 1)
+energy = 2.22
+texture = ExtResource("3_v0lsd")
+
+[node name="Scissors" type="Sprite2D" parent="." unique_id=1055096874]
+position = Vector2(1006, 472)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_34woh")
+
+[node name="MagnifyingGlass" type="Sprite2D" parent="." unique_id=540031040]
+position = Vector2(183, 482)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_s6sjy")
+
+[node name="Marker" type="Sprite2D" parent="." unique_id=1196223467]
+position = Vector2(996.00006, 146)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_7ka50")
+
+[node name="Coffee" type="Sprite2D" parent="." unique_id=1631971333]
+position = Vector2(679, 453)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_1nvu5")
+
+[node name="NixieClock" type="Sprite2D" parent="." unique_id=193806897]
+position = Vector2(255, 134.00003)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_7ka50")
