@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Attribute" format=3 uid="uid://cbs1660h4u6mv"]
+
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="1_ki6c3"]
+
+[resource]
+script = ExtResource("1_ki6c3")
+name = "Blue Icon"
+metadata/_custom_type_script = "uid://boxnakuj3ms4u"

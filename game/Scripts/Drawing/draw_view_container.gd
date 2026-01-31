@@ -1,7 +1,13 @@
 extends SubViewportContainer
 
-var ink_color : Color = Color.BLACK
+@export var ink_color : Color = Color.BLACK
+@export var pen_width := 6.0
 @onready var draw_canvas : Node2D = $SubViewport/DrawCanvas
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	draw_canvas.set_ink_color(ink_color)
+	draw_canvas.set_line_width(pen_width)
 
 func set_ink_color(color: Color):	
 	draw_canvas.set_ink_color(color)	
@@ -21,3 +27,6 @@ func get_drawing() -> BitMap:
 
 func set_debug_name(name: String) -> void:
 	draw_canvas.debug_name = name
+
+func clear_drawing():
+	$DrawContainer/SubViewport/DrawCanvas.clear_canvas()

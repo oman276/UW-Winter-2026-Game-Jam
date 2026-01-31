@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ca2gutxl0nrvb"]
 
-[ext_resource type="Script" uid="uid://ptbxcs7d82hp" path="res://game/scripts/Drawing/draw_view_container.gd" id="1_y5qm2"]
-[ext_resource type="Script" uid="uid://br7phnf8jec6y" path="res://game/scripts/Drawing/draw_canvas.gd" id="2_epe2o"]
+[ext_resource type="Script" uid="uid://ptbxcs7d82hp" path="res://game/Scripts/Drawing/draw_view_container.gd" id="1_y5qm2"]
+[ext_resource type="Script" uid="uid://br7phnf8jec6y" path="res://game/Scripts/Drawing/draw_canvas.gd" id="2_epe2o"]
+[ext_resource type="Texture2D" uid="uid://bavxqetray1gg" path="res://game/Assets/Art/brush_stroke.png" id="3_0cfbt"]
 
 [node name="DrawViewportContainer" type="SubViewportContainer" unique_id=650121923]
 anchors_preset = 15
@@ -20,4 +21,5 @@ render_target_update_mode = 4
 
 [node name="DrawCanvas" type="Node2D" parent="SubViewport" unique_id=1023340742]
 script = ExtResource("2_epe2o")
+line_texture = ExtResource("3_0cfbt")
 _ink_color = Color(0.02286219, 1.0904623e-08, 3.008172e-09, 1)
