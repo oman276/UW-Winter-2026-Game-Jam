@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://haegw70l4fav"]
+
+[ext_resource type="Script" uid="uid://5xv0jlfxnrir" path="res://game/Scripts/Drawing/Testing/texture_rect.gd" id="1_rx3id"]
+[ext_resource type="PackedScene" uid="uid://xuy5j3quxmlh" path="res://game/scenes/Drawing/DrawArea.tscn" id="2_huqy4"]
+
+[node name="DrawingTestScene" type="Node2D" unique_id=687139848]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=458212408]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+script = ExtResource("1_rx3id")
+
+[node name="DrawArea" parent="." unique_id=1424400103 instance=ExtResource("2_huqy4")]
+position = Vector2(489, 82)
+ink_color = Color(0, 0, 0, 1)
+pen_width = 15.0
+area_size = Vector2i(300, 300)

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var line_texture : Texture2D
 
 @export var _ink_color := Color.RED
 @export var line_width := 10.0
@@ -10,8 +11,11 @@ var _current_line: Line2D = null
 
 var debug_name := "DrawCanvas"
 
-func set_ink_color(color: Color):
+func set_ink_color(color: Color) -> void:
 	_ink_color = color
+	
+func set_line_width(width: float) -> void:
+	_line_width = width
 
 ## Call this from a parent to forward input with a local position
 func handle_draw_input(event: InputEvent, local_pos: Vector2) -> void:
@@ -20,7 +24,13 @@ func handle_draw_input(event: InputEvent, local_pos: Vector2) -> void:
 
 			if !_pressed:
 				_current_line = Line2D.new()
+				_current_line.texture = line_texture
+				_current_line.texture_mode = Line2D.LINE_TEXTURE_TILE
+				_current_line.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+				_current_line.antialiased = true
+				_current_line.begin_cap_mode = Line2D.LINE_CAP_ROUND
 				_current_line.end_cap_mode = Line2D.LINE_CAP_ROUND
+				_current_line.joint_mode = Line2D.LINE_JOINT_ROUND
 				_current_line.default_color = _ink_color
 				_current_line.width = line_width
 				add_child(_current_line)

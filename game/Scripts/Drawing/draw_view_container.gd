@@ -11,6 +11,7 @@ func handle_draw_input(event: InputEvent, global_pos: Vector2) -> void:
 	# Convert global position to local position relative to this container
 	var local_pos = global_pos - global_position
 	draw_canvas.handle_draw_input(event, local_pos)
+
 	
 func get_drawing() -> BitMap:
 	var image : Image = $SubViewport.get_texture().get_image()
