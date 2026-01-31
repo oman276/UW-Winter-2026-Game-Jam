@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="UW-W26-Jam"
-run/main_scene="uid://dvhou43rlmrl0"
+run/main_scene="uid://b34m3x7vibrlo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -39,3 +39,6 @@ debug_check_bitmap_status={
 ]
 }
 
+[rendering]
+
+textures/canvas_textures/default_texture_repeat=1
