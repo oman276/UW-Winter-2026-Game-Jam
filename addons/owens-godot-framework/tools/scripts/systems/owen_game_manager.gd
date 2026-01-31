@@ -49,7 +49,7 @@ var current_global_state: GameState = GameState.DEFAULT
 # Note that at the start of the game, the manager will load the initial_level instead.
 var current_level: String = ""
 # The current level node instance, which we reference so we can unload it later.
-var current_level_node: Node2D = null
+var current_level_node: OwenLevel = null
 
 # Mouse Cursor
 # We can define a custom mouse cursor to replace the system cursor.
@@ -105,23 +105,23 @@ func _force_load_level(new_level: String):
 
 	if current_level_node:
 		remove_child(current_level_node)
+		current_level_node.unload_level()
 		current_level_node.queue_free()
 		current_level_node = null
-		_on_unload_level(current_level)
 
 	current_level = new_level
 
 	if new_level in level_path_dict:
 		var scene: PackedScene = level_path_dict[new_level]
 		if scene:
-			current_level_node = scene.instantiate()
+			current_level_node = scene.instantiate() as OwenLevel
 			add_child(current_level_node)
 		else:
 			push_error("OwenGameManager: Level '%s' has a null PackedScene in level_path_dict." % new_level)
 	else:
 		push_error("OwenGameManager: Level '%s' not found in level_path_dict." % new_level)
 
-	_on_load_level(current_level)
+	current_level_node.load_level()
 	if uses_loading_screen and loading_canvas_fade:
 		loading_canvas_fade.fade_out()
 
@@ -130,18 +130,6 @@ func custom_mouse_visible(mouse_visibility: bool) -> void:
 		push_warning("OwenGameManager: custom_mouse_visible called but load_custom_mouse is not enabled.")
 		return
 	mouse_cursor.visible = mouse_visibility
-
-func _on_load_level(level: String) -> void:
-	# Implement any logic you want to happen when a level is loaded here.
-	# There may be general setup you want to do in all cases, or you can do 
-	# something specific on certain levels.
-	return
-
-func _on_unload_level(level: String) -> void:
-	# Implement any logic you want to happen when a level is unloaded here.
-	# There may be general cleanup you want to do in all cases, or you can do 
-	# something specific on certain levels.
-	return
 
 # We use this to process debug inputs.
 func _process(_delta):
@@ -160,7 +148,7 @@ func _find_node_of_type(parent: Node, type: String) -> Node:
 	return null
 
 
-func get_current_level_node() -> Node2D:
+func get_current_level_node() -> OwenLevel:
 	if current_level_node == null:
 		push_error("OwenGameManager: current_level_node is null, cannot get current level node.")
 		return null
