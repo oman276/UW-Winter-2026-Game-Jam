@@ -4,15 +4,17 @@ class_name CensorLevel
 @export var attributes_must_exclude : Array[Attribute] = []
 @export var attributes_must_include : Array[Attribute] = []
 
-
 @export var pickup_audioplayer : AudioStreamPlayer2D
 @export var files_to_load : Array[PackedScene] = []
 
 @onready var rng = RandomNumberGenerator.new()
 
+@export var radio_dialogue: DialogueResource 
 var loaded_files : Array[File] = []
 
 func _ready() -> void:
+	var balloon = DialogueManager.show_dialogue_balloon(radio_dialogue, "radio_dialogue")
+	GameManager.current_level_node.add_child(balloon)
 	add_files()
 
 func add_files() -> void:
