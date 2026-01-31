@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ca2gutxl0nrvb"]
+
+[ext_resource type="Script" uid="uid://ptbxcs7d82hp" path="res://game/scripts/Drawing/draw_view_container.gd" id="1_y5qm2"]
+[ext_resource type="Script" uid="uid://br7phnf8jec6y" path="res://game/scripts/Drawing/draw_canvas.gd" id="2_epe2o"]
+
+[node name="DrawViewportContainer" type="SubViewportContainer" unique_id=650121923]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_y5qm2")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1390636633]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="DrawCanvas" type="Node2D" parent="SubViewport" unique_id=1023340742]
+script = ExtResource("2_epe2o")
+_ink_color = Color(0.02286219, 1.0904623e-08, 3.008172e-09, 1)
+line_width = 10

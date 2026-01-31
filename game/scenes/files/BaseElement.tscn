@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://mto2lxoo8q61"]
+
+[ext_resource type="Texture2D" uid="uid://ctynn02msfqmn" path="res://game/assets/test/test_guy.png" id="1_ip5p5"]
+[ext_resource type="Script" uid="uid://du2xyngorimh7" path="res://game/scripts/files/element.gd" id="2_n875h"]
+[ext_resource type="PackedScene" uid="uid://ca2gutxl0nrvb" path="res://game/scenes/drawing/draw_viewport_container.tscn" id="3_275xh"]
+
+[node name="Element" type="TextureRect" unique_id=1151123996]
+texture_filter = 1
+offset_right = 100.0
+offset_bottom = 1.0
+texture = ExtResource("1_ip5p5")
+stretch_mode = 2
+script = ExtResource("2_n875h")
+element_name = "Purple Guy"
+
+[node name="DrawViewportContainer" parent="." unique_id=650121923 instance=ExtResource("3_275xh")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SubViewport" parent="DrawViewportContainer" index="0" unique_id=1390636633]
+size = Vector2i(100, 100)
+
+[editable path="DrawViewportContainer"]
