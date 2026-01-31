@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
 [ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
 
-[node name="MainScene" type="Node2D" unique_id=233102018]
+[node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
+pickup_audioplayer = NodePath("AudioStreamPlayer2D")
 
 [node name="Wood_Sprite" type="Sprite2D" parent="." unique_id=475077457]
 z_index = -2
