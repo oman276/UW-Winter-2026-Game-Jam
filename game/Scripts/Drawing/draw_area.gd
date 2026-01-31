@@ -9,8 +9,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	draw_container.set_ink_color(ink_color)
-	draw_container.set_line_width(pen_width)
-	draw_container.set_size(area_size)
+	#draw_container.set_line_width(pen_width)
+	#draw_container.set_size(area_size)
 
 func clear_drawing():
 	$DrawContainer/SubViewport/DrawCanvas.clear_canvas()

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b4i3a3ik8lla1"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_wqw5n"]
+[ext_resource type="Texture2D" uid="uid://blpsuuvh6te4v" path="res://icon.svg" id="2_xrtxo"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="3_tf0bg"]
+[ext_resource type="Resource" uid="uid://dchg8g0t04ygx" path="res://game/Attributes/red_icon.tres" id="6_t0xty"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_wqw5n")]
+custom_minimum_size = Vector2(250, 257)
+anchor_right = 0.21705556
+anchor_bottom = 0.39709878
+offset_right = -0.04800415
+offset_bottom = -0.32000732
+metadata/_edit_use_anchors_ = true
+
+[node name="Element" parent="Panel" parent_id_path=PackedInt32Array(2090312253) index="1" unique_id=1151123996]
+modulate = Color(1, 0.53, 0.53, 1)
+offset_left = 47.0
+offset_top = 56.0
+offset_right = 175.0
+offset_bottom = 184.0
+texture = ExtResource("2_xrtxo")
+element_name = "Red Icon"
+attributes = Array[ExtResource("3_tf0bg")]([ExtResource("6_t0xty")])

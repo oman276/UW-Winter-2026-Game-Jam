@@ -5,6 +5,8 @@ class_name File
 @onready var viewport_container : SubViewportContainer = $Panel/DrawViewportContainer
 var elements : Array[FileElement] = []
 
+var _negative_cover_threshold := 0.2
+
 func _ready() -> void:
 	viewport_container.set_debug_name("File Viewport")
 	
@@ -29,3 +31,32 @@ func _on_panel_gui_input(event: InputEvent) -> void:
 		# Forward to each element's viewport container
 		for element in elements:
 			element.handle_draw_input(event, global_pos)
+	
+# Probably not the best way of doing this
+# Returns a 2D Array where the first row is marked attributes
+# and the second row is unmarked attributes
+func get_attribute_marking() -> Dictionary[String, Array]:
+	var marked: Array[Attribute] = []
+	var unmarked: Array[Attribute] = []
+	
+	for element in elements:
+		if element.is_marked():
+			marked.append_array(element.attributes)
+		else:
+			unmarked.append_array(element.attributes)
+			
+	return {
+		"marked": marked,
+		"unmarked": unmarked	
+	}
+
+func negative_space_marked() -> bool:
+	var total_negative_space : int = viewport_container.size.x + viewport_container.size.y
+	var marked_negative_space : int = viewport_container.get_drawing().get_true_bit_count()
+	for element in elements:
+		var element_bitmap = element.get_drawing()
+		total_negative_space -= element_bitmap.get_size().x * element_bitmap.get_size().y
+		marked_negative_space -= element_bitmap.get_true_bit_count()
+		
+	return (float(marked_negative_space)/total_negative_space) > _negative_cover_threshold
+		

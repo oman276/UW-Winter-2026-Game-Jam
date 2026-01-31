@@ -4,4 +4,84 @@ class_name CensorLevel
 @export var attributes_must_exclude : Array[Attribute] = []
 @export var attributes_must_include : Array[Attribute] = []
 
-@export var files_to_load : Array[Control] = []
+@export var files_to_load : Array[PackedScene] = [
+]
+
+@onready var rng = RandomNumberGenerator.new()
+
+var loaded_files : Array[File] = []
+
+func _ready() -> void:
+	add_files()
+
+func add_files() -> void:
+	var screen_size := get_viewport().get_visible_rect().size
+	
+	for file_packed in files_to_load:
+		var file : File = file_packed.instantiate()
+		loaded_files.append(file)
+		add_child(file)
+		file.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
+								100 + rng.randf_range(0, 0.6*screen_size.y))
+		file.size = Vector2(200,200)
+		
+func _input(event: InputEvent) -> void:
+	
+	if event.is_action("check_results"):
+		var results := evaluate_all_files()
+		print("Evaluation of Files")
+		for result in results:
+			print("--------------------------------------")
+			print("Correct: %s" % result.correct)
+			print("negative space drawn: %s" % result.negative_space_drawn)
+			print("Marked [correct]: {arr}".format({"arr": result.marked_correct}))
+			print("Unmarked [correct]: {arr}".format({"arr": result.unmarked_correct}))
+			print("Marked [incorrect]: {arr}".format({"arr": result.marked_incorrect}))
+			print("Unmarked [incorrect]: {arr}".format({"arr": result.unmarked_incorrect}))
+			
+		
+class FileResult:
+	var file_name: String
+	var correct : bool
+	var negative_space_drawn : bool = false
+	var marked_correct : Array[Attribute]
+	var marked_incorrect : Array[Attribute]
+	var unmarked_correct : Array[Attribute]
+	var unmarked_incorrect : Array[Attribute]
+	
+func evaluate_all_files() -> Array[FileResult]:	
+	var results : Array[FileResult] = []
+	for file in loaded_files:	
+		results.append(evaluate_file(file))
+	return results
+	
+# theres probably a better way to do this
+# in case we want to tell the player what the did wrong,
+# this gives a full list
+func evaluate_file(file:File) -> FileResult:	
+	var attribute_markings := file.get_attribute_marking()
+	var marked_attributes : Array[Attribute] = attribute_markings["marked"]
+	var unmarked_attributes : Array[Attribute] = attribute_markings["unmarked"]
+	
+	var result := FileResult.new()
+	result.correct = true
+	
+	result.negative_space_drawn = file.negative_space_marked()
+	if result.negative_space_drawn: result.correct = false
+	
+	for attribute in marked_attributes:			
+		if attributes_must_exclude.find(attribute) == -1:
+			result.correct = false
+			result.marked_incorrect.append(attribute)
+		else: result.marked_correct.append(attribute)
+	
+	for attribute in unmarked_attributes:
+		if attributes_must_include.find(attribute) == -1:
+			result.correct = false
+			result.unmarked_incorrect.append(attribute)
+		else: result.unmarked_correct.append(attribute)
+			
+	return result
+	
+			
+	
