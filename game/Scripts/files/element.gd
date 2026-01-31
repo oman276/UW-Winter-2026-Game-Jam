@@ -6,6 +6,9 @@ class_name FileElement
 
 @onready var viewport : SubViewportContainer = $DrawViewportContainer
 
+# percentage of element covered to be considered "marked"
+var _covered_threshold: = 0.1
+
 func _ready() -> void:
 	viewport.set_debug_name(element_name)
 
@@ -22,3 +25,11 @@ func _process(_delta: float) -> void:
 			print("Bitmap true bits count: %d" % map.get_true_bit_count())
 		else:
 			print("No bitmap data for element: %s" % element_name)
+			
+func get_drawing() -> BitMap:
+	return viewport.get_drawing()
+	
+func is_marked() -> bool:
+	var map : BitMap = viewport.get_drawing()
+	var size := map.get_size()
+	return (map.get_true_bit_count() / float(size.x * size.y)) > _covered_threshold
