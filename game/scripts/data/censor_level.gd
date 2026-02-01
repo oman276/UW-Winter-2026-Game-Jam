@@ -193,6 +193,8 @@ func _is_click_on_draggable_or_file() -> bool:
 func _on_next_button_pressed() -> void:
 	if GameManager.mistakes_left > 0 and next_level:
 		GameManager.load_level(next_level)
+	else:
+		GameManager.load_level("Game Over")
 		
 func _object_picked_up(object: Dragger):
 	current_drag_object = object

@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="3_ycnlm"]
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="4_e4ogn"]
 [ext_resource type="Script" uid="uid://bynku2a62gdtx" path="res://addons/owens-godot-framework/tools/scripts/owen_level_load_button.gd" id="5_ftvng"]
-[ext_resource type="Texture2D" uid="uid://bhlvgix3s37yq" path="res://game/Assets/Art/LogoStamp.png" id="6_8qc1h"]
+[ext_resource type="Texture2D" uid="uid://blwm65t82xuy6" path="res://game/Assets/Art/LogoStamp.png" id="6_8qc1h"]
 [ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="6_ly6sa"]
 [ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="7_8qc1h"]
 
