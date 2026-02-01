@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bcwcqc4jx2v3h"]
+
+[ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="1_k4v3f"]
+
+[node name="MistakeLabel" type="Label" unique_id=914596777]
+custom_minimum_size = Vector2(10, 0)
+theme = ExtResource("1_k4v3f")
+theme_override_font_sizes/font_size = 15
+text = "Document: 
+------------------------------------------------
+Jacket - Incorrectly Removed
+sdofij - Not corrected"
+autowrap_mode = 2

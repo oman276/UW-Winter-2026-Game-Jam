@@ -166,9 +166,10 @@ color = Color(0, 0, 0, 1)
 [node name="EndFade" type="Node" parent="EndBackground" unique_id=1482865441 node_paths=PackedStringArray("items_to_fade")]
 script = ExtResource("14_pv2m1")
 items_to_fade = [NodePath("../ColorRect")]
-fade_duration = 1.0
+fade_duration = 2.0
 
 [node name="Report" type="CenterContainer" parent="." unique_id=1776398282]
+visible = false
 z_index = 5
 offset_right = 1152.0
 offset_bottom = 649.0
@@ -221,23 +222,12 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("15_t5ygl")
-text = "MISTAKES:"
+text = "Errors:"
 autowrap_mode = 2
 
 [node name="ErrorsVbox" type="VBoxContainer" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=1410887929]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="Label3" type="Label" parent="Report/Control/MarginContainer/VBoxContainer/ErrorsVbox" unique_id=1276190991]
-custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
-theme = ExtResource("15_t5ygl")
-theme_override_font_sizes/font_size = 15
-text = "Document: 
-------------------------------------------------
-Jacket - Incorrectly Removed
-sdofij - Not corrected"
-autowrap_mode = 2
 
 [node name="LabelPerformance" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=252078493]
 custom_minimum_size = Vector2(10, 0)
@@ -246,7 +236,7 @@ theme = ExtResource("15_t5ygl")
 text = "Performance: Satisfactory"
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=984613292]
+[node name="NextButton" type="Button" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=984613292]
 custom_minimum_size = Vector2(130.08, 34.685)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -254,3 +244,4 @@ theme = ExtResource("15_t5ygl")
 text = "Go Home"
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]
+[connection signal="pressed" from="Report/Control/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

@@ -8,6 +8,7 @@ class_name CensorLevel
 @export var files_to_load : Array[PackedScene] = []
 
 @export var next_level : String
+var level_ended := false
 
 @onready var rng = RandomNumberGenerator.new()
 
@@ -31,6 +32,10 @@ func add_files() -> void:
 		file.size = Vector2(200,200)
 		
 func end_level() -> void:
+	var day_results := evaluate_all_files()
+	GameManager.mistakes_left -= day_results.total_files - day_results.correct_files
+	$Report.set_results(day_results)
+	
 	$EndBackground/EndFade.fade_in()
 	await get_tree().create_timer(3.0).timeout
 	$Report.appear()
@@ -38,7 +43,8 @@ func end_level() -> void:
 		
 func _input(event: InputEvent) -> void:
 	
-	if event.is_action("check_results"):
+	if event.is_action("check_results") and !level_ended:
+		level_ended = true
 		var results : Array[FileResult] = evaluate_all_files().results
 		print("--------------------------------------")
 		print("Evaluation of Files")
@@ -105,3 +111,8 @@ func evaluate_file(file:File) -> FileResult:
 			
 	return result
 	
+
+
+func _on_next_button_pressed() -> void:
+	if GameManager.mistakes_left > 0 and next_level:
+		GameManager.load_level(next_level)
