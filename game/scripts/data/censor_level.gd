@@ -32,6 +32,9 @@ func _ready() -> void:
 	var balloon = DialogueManager.show_dialogue_balloon(radio_dialogue, "radio_dialogue")
 	GameManager.current_level_node.add_child(balloon)
 	add_files()
+	var cursor = GameManager.mouse_cursor as CensorCursor
+	if cursor:
+		cursor._attempt_signal_connection()
 
 func add_files() -> void:
 	var screen_size := get_viewport().get_visible_rect().size
@@ -52,6 +55,9 @@ func add_files() -> void:
 		#instance.size = Vector2(200,200)
 		
 func end_level() -> void:
+	if current_draw_mode == DrawMode.MARK:
+		set_draw_mode(DrawMode.NONE)
+
 	var day_results := evaluate_all_files()
 	GameManager.mistakes_left -= day_results.total_files - day_results.correct_files
 	$Report.set_results(day_results)
