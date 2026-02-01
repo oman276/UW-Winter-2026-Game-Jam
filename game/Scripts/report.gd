@@ -1,5 +1,7 @@
 extends CenterContainer
 
+@export var print_debug := false
+
 @onready var correct_label := $Control/MarginContainer/VBoxContainer/LabelCorrect
 @onready var performance_label := $Control/MarginContainer/VBoxContainer/LabelPerformance
 @onready var mistake_label_scene : PackedScene = preload("res://game/scenes/Report/report_mistake_label.tscn")
@@ -15,6 +17,18 @@ func appear():
 	.set_ease(Tween.EASE_OUT)
 	
 func set_results(day_results: CensorLevel.DayResults) -> void:
+	if print_debug:
+		print("--------------------------------------")
+		print("Evaluation of Files")
+		for result in day_results.results:
+			print("--------------------------------------")
+			print("Correct: %s" % result.correct)
+			print("negative space drawn: %s" % result.negative_space_drawn)
+			print("Marked [correct]: {arr}".format({"arr": result.marked_correct}))
+			print("Unmarked [correct]: {arr}".format({"arr": result.unmarked_correct}))
+			print("Marked [incorrect]: {arr}".format({"arr": result.marked_incorrect}))
+			print("Unmarked [incorrect]: {arr}".format({"arr": result.unmarked_incorrect}))
+	
 	correct_label.text = "Documents sufficiently corrected: %d/%d" % [day_results.correct_files, day_results.total_files]
 	
 	var performance : String

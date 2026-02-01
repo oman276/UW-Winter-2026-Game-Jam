@@ -5,9 +5,10 @@
 [ext_resource type="Resource" uid="uid://c406n6fupsmfl" path="res://game/Attributes/red_guy.tres" id="3_vapuu"]
 [ext_resource type="Resource" uid="uid://cbs1660h4u6mv" path="res://game/Attributes/blue_icon.tres" id="4_8lgqq"]
 [ext_resource type="PackedScene" uid="uid://by4ve60tao2ap" path="res://game/scenes/files/test_file_1.tscn" id="4_e38ob"]
+[ext_resource type="PackedScene" uid="uid://b4i3a3ik8lla1" path="res://game/scenes/files/test_file_2.tscn" id="6_5jipq"]
 
 [node name="MainScene" unique_id=233102018 instance=ExtResource("1_aurq8")]
 attributes_must_exclude = Array[ExtResource("2_a7mg2")]([ExtResource("3_vapuu")])
 attributes_must_include = Array[ExtResource("2_a7mg2")]([ExtResource("4_8lgqq")])
-files_to_load = Array[PackedScene]([ExtResource("4_e38ob")])
+files_to_load = Array[PackedScene]([ExtResource("4_e38ob"), ExtResource("6_5jipq")])
 next_level = "day_2_level"

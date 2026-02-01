@@ -7,6 +7,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("1_c3mgs")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
