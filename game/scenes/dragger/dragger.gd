@@ -1,4 +1,5 @@
 extends Control
+class_name Dragger
 
 var dragging := false
 var newPosition := Vector2()

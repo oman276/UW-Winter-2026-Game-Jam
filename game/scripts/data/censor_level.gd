@@ -21,12 +21,27 @@ func add_files() -> void:
 	var screen_size := get_viewport().get_visible_rect().size
 	
 	for file_packed in files_to_load:
-		var file : File = file_packed.instantiate()
+		var instance = file_packed.instantiate()
+		var file : File
+		if instance is Dragger:
+			for child in instance.get_children():
+				if child is File:
+					file = child
+			
+			if not file:
+				push_error("CensorLevel: Dragger instance does not contain a File child.")
+				continue
+		elif instance is File:
+			file = instance
+		else:
+			push_error("CensorLevel: PackedScene is neither a Dragger nor a File.")
+			continue
+
 		loaded_files.append(file)
-		add_child(file)
-		file.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
+		add_child(instance)
+		instance.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
 								100 + rng.randf_range(0, 0.6*screen_size.y))
-		file.size = Vector2(200,200)
+		instance.size = Vector2(200,200)
 		
 func _input(event: InputEvent) -> void:
 	
