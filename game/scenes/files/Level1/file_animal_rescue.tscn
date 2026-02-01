@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_apmvx"]
 [ext_resource type="Texture2D" uid="uid://coqfmud7w1w6w" path="res://game/Assets/Level1/3.png" id="2_apmvx"]
 [ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="3_i2huh"]
-[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="4_phok8"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/scripts/data/attributes.gd" id="4_phok8"]
 [ext_resource type="Resource" uid="uid://bb4uuj5cehgoc" path="res://game/Attributes/traitor_name.tres" id="6_7c1mc"]
 
 [node name="BaseFile" unique_id=816497170 instance=ExtResource("1_apmvx")]
@@ -27,7 +27,10 @@ offset_right = 765.85266
 offset_bottom = 574.8045
 scale = Vector2(0.435, 0.435)
 texture = ExtResource("2_apmvx")
-expand_mode = 1
+
+[node name="DrawViewportContainer" parent="Panel" index="1" unique_id=522254512]
+anchor_right = 0.9899946
+anchor_bottom = 0.9927808
 
 [node name="Element3" parent="Panel" index="2" unique_id=237290889 instance=ExtResource("3_i2huh")]
 layout_mode = 0

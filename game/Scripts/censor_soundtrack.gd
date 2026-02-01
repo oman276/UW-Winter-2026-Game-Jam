@@ -1,5 +1,5 @@
 extends Control
-class_name CensorSoundtrack
+# class_name CensorSoundtrack
 
 @onready var static_player : AudioStreamPlayer = AudioStreamPlayer.new()
 @onready var dynamic_player : AudioStreamPlayer = AudioStreamPlayer.new()

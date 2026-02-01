@@ -23,6 +23,10 @@ offset_right = 296.8506
 offset_bottom = 367.55383
 scale = Vector2(0.435, 0.435)
 
+[node name="DrawViewportContainer" parent="Panel" index="1" unique_id=522254512]
+anchor_right = 1.0044347
+anchor_bottom = 0.99523807
+
 [node name="Instructions" parent="Panel" index="2" unique_id=1561055183 instance=ExtResource("6_qqhx5")]
 position = Vector2(-11, -15)
 scale = Vector2(0.71, 0.71)

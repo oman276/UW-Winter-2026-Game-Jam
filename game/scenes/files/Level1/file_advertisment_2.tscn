@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_ww73d"]
 [ext_resource type="Texture2D" uid="uid://bherdyh2a7b1w" path="res://game/Assets/Level1/6.png" id="2_ww73d"]
 [ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="3_w6m3k"]
-[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="4_lafsq"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/scripts/data/attributes.gd" id="4_lafsq"]
 [ext_resource type="Resource" uid="uid://b5ylcr8ehwwv5" path="res://game/Attributes/improper_art.tres" id="5_ksqtc"]
 
 [node name="BaseFile" unique_id=816497170 instance=ExtResource("1_ww73d")]
@@ -27,13 +27,10 @@ offset_right = 396.0
 offset_bottom = 555.9686
 scale = Vector2(0.435, 0.435)
 texture = ExtResource("2_ww73d")
-expand_mode = 1
 
 [node name="DrawViewportContainer" parent="Panel" index="1" unique_id=522254512]
-anchors_preset = -1
-anchor_right = 0.6468254
-anchor_bottom = 0.73333335
-metadata/_edit_use_anchors_ = true
+anchor_right = 1.0021423
+anchor_bottom = 0.9925102
 
 [node name="Element3" parent="Panel" index="2" unique_id=237290889 instance=ExtResource("3_w6m3k")]
 layout_mode = 0
