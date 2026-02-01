@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by0s2p0ir8jw2" path="res://game/sprites/wood_backdrop.jpg" id="2_axnlc"]
 [ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="3_epu4x"]
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="4_gf4ye"]
+[ext_resource type="Script" uid="uid://dfgxav8w8o6gb" path="res://game/scripts/game_over_text.gd" id="4_sgbgo"]
 [ext_resource type="Script" uid="uid://bynku2a62gdtx" path="res://addons/owens-godot-framework/tools/scripts/owen_level_load_button.gd" id="5_sgbgo"]
 [ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="7_m3ffh"]
 [ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="8_brb07"]
@@ -70,9 +71,9 @@ anchor_left = 0.231
 anchor_top = 0.347
 anchor_right = 0.77400005
 anchor_bottom = 0.56600004
-offset_left = -0.5339966
+offset_left = -106.534
 offset_top = -81.742004
-offset_right = -0.036071777
+offset_right = 119.96393
 offset_bottom = 26.123962
 theme = SubResource("Theme_30v5b")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -85,6 +86,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_sgbgo")
 
 [node name="Button" type="Button" parent="MenuCtrl/TextureRect" unique_id=1833639393]
 layout_mode = 1
