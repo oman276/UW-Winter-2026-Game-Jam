@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dnk0k7lmty18h"]
+
+[ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="1_uun8b"]
+[ext_resource type="Texture2D" uid="uid://dbhxp3jsy60pw" path="res://game/scenes/instruction_paper.png" id="2_wla24"]
+
+[node name="Instructions" type="Node2D" unique_id=1561055183]
+
+[node name="Label" type="Label" parent="." unique_id=1914640731]
+z_index = 1
+offset_left = 81.0
+offset_top = 59.0
+offset_right = 589.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("1_uun8b")
+theme_override_font_sizes/font_size = 19
+text = "A Cordovian spy has been found from the Ministry of Peace. He had been operating undercover for years. Who knows how long the Cordovian rats have been eying our land.
+
+
+The Party makes no mistakes.
+
+Todays truths:
+	- The spy was of rank C-10
+	- The spy has exhibited anti-citizen behaviour
+	- The spy was neutralized and no documents lost
+
+
+Additional information:
+The proletariat papers have been creating art that is improper. Let us not propagate such garbage"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2064517360]
+offset_right = 950.0
+offset_bottom = 950.0
+rotation = -0.017453292
+scale = Vector2(0.6793018, 0.6793018)
+texture = ExtResource("2_wla24")
