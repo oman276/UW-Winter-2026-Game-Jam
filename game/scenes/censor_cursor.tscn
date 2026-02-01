@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ltxea6ppoyyy"]
+
+[ext_resource type="PackedScene" uid="uid://bey3qxjuh0qpj" path="res://addons/owens-godot-framework/tools/scenes/systems/OwenMouseCursor.tscn" id="1_g3ge8"]
+[ext_resource type="Script" uid="uid://dull3tf81wi3y" path="res://game/scripts/censor_cursor.gd" id="2_ytgbn"]
+[ext_resource type="Texture2D" uid="uid://dn8nu28f11o44" path="res://game/Assets/test/test_cursor.png" id="3_38b3e"]
+[ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="4_glit5"]
+
+[node name="CensorCursor" unique_id=788423496 instance=ExtResource("1_g3ge8")]
+script = ExtResource("2_ytgbn")
+default_sprite = ExtResource("3_38b3e")
+mark_sprite = ExtResource("4_glit5")
+default_sprite_scale = 0.2
+mark_sprite_scale = 0.15
+mark_sprite_offset = Vector2(30, -25)
