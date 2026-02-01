@@ -12,10 +12,10 @@ border_width_bottom = 2
 border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="BaseFile" type="Control" unique_id=816497170]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 3
-anchor_right = 0.2113264
-anchor_bottom = 0.4509753
+anchor_right = 0.02209029
+anchor_bottom = 0.040481497
 offset_right = -0.4480133
 offset_bottom = -0.23200989
 grow_horizontal = 2
@@ -40,9 +40,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_tovee")
 
 [node name="BackgroundTexture" type="TextureRect" parent="Panel" unique_id=1839488067]
 layout_mode = 0
-offset_right = 200.0
-offset_bottom = 200.0
+offset_right = 25.0
+offset_bottom = 26.0
 expand_mode = 1
 
 [node name="DrawViewportContainer" parent="Panel" unique_id=522254512 instance=ExtResource("3_21myl")]
 layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.42798355
+anchor_bottom = 0.34931508
+metadata/_edit_use_anchors_ = true
