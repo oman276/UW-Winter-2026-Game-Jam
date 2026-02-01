@@ -1,6 +1,9 @@
 extends Control
 class_name Dragger
 
+signal picked_up(Dragger)
+signal put_down(Dragger)
+
 var dragging := false
 var newPosition := Vector2()
 var hovering := false
@@ -19,6 +22,7 @@ func _gui_input(event):
 			direction = (get_viewport().get_mouse_position() - position).normalized()
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * direction
 			dragging = true
+			picked_up.emit(self)
 			
 			self.move_to_front()
 			self.scale *= 1.05
@@ -27,6 +31,7 @@ func _gui_input(event):
 		else:
 			self.scale /= 1.05
 			dragging = false
+			put_down.emit(self)
 
 	elif event is InputEventMouseMotion:
 		if dragging:

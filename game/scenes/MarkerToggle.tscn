@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8ed1lu7caa5d"]
 
-[ext_resource type="Script" uid="uid://bh64wa6i3utap" path="res://game/scripts/marker_toggle.gd" id="1_rbhqn"]
+[ext_resource type="Script" uid="uid://bh64wa6i3utap" path="res://game/Scripts/marker_toggle.gd" id="1_rbhqn"]
 [ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="1_wys26"]
 
 [node name="MarkerToggle" type="Control" unique_id=1939358221]
