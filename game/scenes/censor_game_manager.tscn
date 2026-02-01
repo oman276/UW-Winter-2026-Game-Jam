@@ -8,12 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://bng6mi3uxpxlw" path="res://game/scenes/Levels/level_day_1.tscn" id="6_bt47q"]
 [ext_resource type="PackedScene" uid="uid://ctjk7fxtfdwok" path="res://game/scenes/Levels/level_day_2.tscn" id="7_b7if7"]
 [ext_resource type="PackedScene" uid="uid://ltxea6ppoyyy" path="res://game/scenes/censor_cursor.tscn" id="8_b7if7"]
+[ext_resource type="PackedScene" uid="uid://bgj0r6ax83fae" path="res://game/scenes/Menu.tscn" id="8_caerc"]
 
 [node name="CensorGameManager" unique_id=1714877070 instance=ExtResource("1_fwnex")]
 script = ExtResource("2_bt47q")
 level_path_dict = Dictionary[String, PackedScene]({
 "": null,
 "Empty Test Level": ExtResource("3_b7if7"),
+"Menu": ExtResource("8_caerc"),
 "Platformer Test Level": ExtResource("4_caerc"),
 "Top Down Test Level": ExtResource("4_caerc"),
 "day_1_level": ExtResource("6_bt47q"),
