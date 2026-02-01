@@ -146,10 +146,10 @@ position = Vector2(0, 1.5258789e-05)
 script = ExtResource("11_reirr")
 
 [node name="MarkerToggle" parent="." unique_id=1939358221 instance=ExtResource("12_pv2m1")]
-offset_left = 509.00003
-offset_top = 417.0
-offset_right = 509.00003
-offset_bottom = 417.0
+offset_left = 334.00003
+offset_top = 86.00003
+offset_right = 334.00003
+offset_bottom = 86.00003
 scale = Vector2(0.35999876, 0.35999876)
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]

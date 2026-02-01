@@ -19,6 +19,10 @@ var loaded_files : Array[File] = []
 
 @onready var current_draw_mode : DrawMode = DrawMode.NONE
 
+# Signal emitted when draw mode changes
+# Parameters: new_mode (DrawMode), is_active (bool), mouse_position (Vector2)
+signal draw_mode_changed(new_mode: DrawMode, is_active: bool, mouse_position: Vector2)
+
 func _ready() -> void:
 	var balloon = DialogueManager.show_dialogue_balloon(radio_dialogue, "radio_dialogue")
 	GameManager.current_level_node.add_child(balloon)
@@ -117,6 +121,10 @@ func evaluate_file(file:File) -> FileResult:
 func set_draw_mode(mode: DrawMode) -> void:
 	print("Setting draw mode to: %s" % mode)
 	current_draw_mode = mode
+	# Emit signal with current mouse position
+	var mouse_pos = get_viewport().get_mouse_position()
+	var is_active = (mode == DrawMode.MARK)
+	draw_mode_changed.emit(mode, is_active, mouse_pos)
 	
 func get_draw_mode() -> DrawMode:
 	return current_draw_mode
