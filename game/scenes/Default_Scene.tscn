@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di7waos42g3hs"]
 
-[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_fbms8"]
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/Scripts/data/censor_level.gd" id="1_fbms8"]
 [ext_resource type="Texture2D" uid="uid://by0s2p0ir8jw2" path="res://game/sprites/wood_backdrop.jpg" id="2_1gvmw"]
 [ext_resource type="Resource" uid="uid://djs5s1asbbdxx" path="res://game/dialogue/radio_dialogue.dialogue" id="2_ipmk8"]
 [ext_resource type="Texture2D" uid="uid://cswuki0f3vgu5" path="res://game/sprites/10861471.png" id="3_v0lsd"]
@@ -11,8 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
-[ext_resource type="Script" path="res://game/scenes/level_manager.gd" id="11_reirr"]
-[ext_resource type="Texture2D" uid="uid://b8oa7krgpvun" path="res://game/sprites/static.png" id="13_n2ao8"]
+[ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
+[ext_resource type="Texture2D" uid="uid://6adioi5qv66e" path="res://game/sprites/static.png" id="13_n2ao8"]
+[ext_resource type="Script" uid="uid://1teq5vwtkwj6" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_canvas_fade.gd" id="14_pv2m1"]
+[ext_resource type="Script" uid="uid://bguupictharbi" path="res://game/Scripts/report.gd" id="15_ecnnx"]
+[ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="15_t5ygl"]
+[ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="16_86ic4"]
 
 [node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
@@ -149,5 +153,104 @@ z_index = 2
 position = Vector2(580, 513)
 scale = Vector2(0.58802086, 0.5810305)
 texture = ExtResource("13_n2ao8")
+
+[node name="EndBackground" type="Node2D" parent="." unique_id=1317264974]
+z_index = 5
+
+[node name="ColorRect" type="ColorRect" parent="EndBackground" unique_id=135565033]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="EndFade" type="Node" parent="EndBackground" unique_id=1482865441 node_paths=PackedStringArray("items_to_fade")]
+script = ExtResource("14_pv2m1")
+items_to_fade = [NodePath("../ColorRect")]
+fade_duration = 1.0
+
+[node name="Report" type="CenterContainer" parent="." unique_id=1776398282]
+z_index = 5
+offset_right = 1152.0
+offset_bottom = 649.0
+script = ExtResource("15_ecnnx")
+
+[node name="Control" type="Control" parent="Report" unique_id=264447799]
+custom_minimum_size = Vector2(350, 500)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Report/Control" unique_id=50077609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.8668333, 0.83, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Report/Control" unique_id=1262370311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Report/Control/MarginContainer" unique_id=260938246]
+layout_mode = 2
+
+[node name="LabelHeader" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=233692592]
+layout_mode = 2
+theme = ExtResource("15_t5ygl")
+theme_override_fonts/font = ExtResource("16_86ic4")
+theme_override_font_sizes/font_size = 21
+text = "Performance Report"
+horizontal_alignment = 1
+
+[node name="LabelCorrect" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=2059671311]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme = ExtResource("15_t5ygl")
+text = "Documents sufficiently corrected: 4/3"
+autowrap_mode = 2
+
+[node name="LabelMistakes" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=1416186076]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme = ExtResource("15_t5ygl")
+text = "MISTAKES:"
+autowrap_mode = 2
+
+[node name="ErrorsVbox" type="VBoxContainer" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=1410887929]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label3" type="Label" parent="Report/Control/MarginContainer/VBoxContainer/ErrorsVbox" unique_id=1276190991]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme = ExtResource("15_t5ygl")
+theme_override_font_sizes/font_size = 15
+text = "Document: 
+------------------------------------------------
+Jacket - Incorrectly Removed
+sdofij - Not corrected"
+autowrap_mode = 2
+
+[node name="LabelPerformance" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=252078493]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme = ExtResource("15_t5ygl")
+text = "Performance: Satisfactory"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=984613292]
+custom_minimum_size = Vector2(130.08, 34.685)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("15_t5ygl")
+text = "Go Home"
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]

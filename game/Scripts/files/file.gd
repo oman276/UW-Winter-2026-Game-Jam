@@ -1,6 +1,8 @@
 extends Control
 class_name File
 
+@export var file_title : String = "no_title"
+
 @onready var panel : Panel = $Panel
 @onready var viewport_container : SubViewportContainer = $Panel/DrawViewportContainer
 var elements : Array[FileElement] = []

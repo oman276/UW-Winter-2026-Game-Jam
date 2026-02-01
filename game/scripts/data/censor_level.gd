@@ -31,12 +31,16 @@ func add_files() -> void:
 		file.size = Vector2(200,200)
 		
 func end_level() -> void:
-	if next_level: GameManager.load_level(next_level)
+	$EndBackground/EndFade.fade_in()
+	await get_tree().create_timer(3.0).timeout
+	$Report.appear()
+	#if next_level: GameManager.load_level(next_level)
 		
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action("check_results"):
-		var results := evaluate_all_files()
+		var results : Array[FileResult] = evaluate_all_files().results
+		print("--------------------------------------")
 		print("Evaluation of Files")
 		for result in results:
 			print("--------------------------------------")
@@ -48,8 +52,13 @@ func _input(event: InputEvent) -> void:
 			print("Unmarked [incorrect]: {arr}".format({"arr": result.unmarked_incorrect}))
 		end_level()		
 		
+class DayResults:
+	var total_files: int
+	var correct_files: int
+	var results: Array[FileResult]		
+		
 class FileResult:
-	var file_name: String
+	var file_title: String
 	var correct : bool
 	var negative_space_drawn : bool = false
 	var marked_correct : Array[Attribute]
@@ -57,11 +66,15 @@ class FileResult:
 	var unmarked_correct : Array[Attribute]
 	var unmarked_incorrect : Array[Attribute]
 	
-func evaluate_all_files() -> Array[FileResult]:	
-	var results : Array[FileResult] = []
-	for file in loaded_files:	
-		results.append(evaluate_file(file))
-	return results
+func evaluate_all_files() -> DayResults:	
+	var day_results := DayResults.new()
+	day_results.results = []
+	for file in loaded_files:
+		var result :=  evaluate_file(file)
+		day_results.total_files += 1
+		if result.correct: day_results.correct_files += 1
+		day_results.results.append(result)
+	return day_results
 	
 # theres probably a better way to do this
 # in case we want to tell the player what the did wrong,
@@ -72,6 +85,7 @@ func evaluate_file(file:File) -> FileResult:
 	var unmarked_attributes : Array[Attribute] = attribute_markings["unmarked"]
 	
 	var result := FileResult.new()
+	result.file_title = file.file_title
 	result.correct = true
 	
 	result.negative_space_drawn = file.negative_space_marked()
