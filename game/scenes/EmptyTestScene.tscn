@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b34m3x7vibrlo"]
 
-[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_oka5v"]
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/Scripts/data/censor_level.gd" id="1_oka5v"]
 [ext_resource type="PackedScene" uid="uid://bj06ngjh7rdfg" path="res://game/scenes/dragger/draggable_file.tscn" id="2_hkm4w"]
 
 [node name="EmptyTestScene" type="Node2D" unique_id=266287186]
