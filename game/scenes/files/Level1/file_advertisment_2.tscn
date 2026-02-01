@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dj5cqx26cehsg"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_ww73d"]
+[ext_resource type="Texture2D" uid="uid://bherdyh2a7b1w" path="res://game/Assets/Level1/6.png" id="2_ww73d"]
+[ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="3_w6m3k"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/scripts/data/attributes.gd" id="4_lafsq"]
+[ext_resource type="Resource" uid="uid://b5ylcr8ehwwv5" path="res://game/Attributes/improper_art.tres" id="5_ksqtc"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_ww73d")]
+custom_minimum_size = Vector2(163, 231)
+anchor_right = 0.14242013
+anchor_bottom = 0.3568395
+offset_right = -1.0679932
+offset_bottom = -0.23199463
+file_title = "Advertisement Barber"
+
+[node name="Panel" parent="." index="0" unique_id=2090312253]
+anchors_preset = -1
+anchor_right = 1.0039841
+anchor_bottom = 1.0031847
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 396.0
+offset_bottom = 555.9686
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("2_ww73d")
+
+[node name="DrawViewportContainer" parent="Panel" index="1" unique_id=522254512]
+anchor_right = 1.0021423
+anchor_bottom = 0.9925102
+
+[node name="Element3" parent="Panel" index="2" unique_id=237290889 instance=ExtResource("3_w6m3k")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 34.0
+offset_right = 120.0
+offset_bottom = 213.0
+texture = null
+element_name = "Improper Art"
+attributes = Array[ExtResource("4_lafsq")]([ExtResource("5_ksqtc")])

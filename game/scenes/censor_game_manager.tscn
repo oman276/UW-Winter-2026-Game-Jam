@@ -1,41 +1,34 @@
 [gd_scene format=3 uid="uid://brsdutd5yyipp"]
 
 [ext_resource type="PackedScene" uid="uid://o4iyp1u4haag" path="res://addons/owens-godot-framework/tools/scenes/systems/OwenGameManager.tscn" id="1_fwnex"]
-[ext_resource type="Script" uid="uid://cqbimnwym5cbj" path="res://game/scripts/System/censor_game_manager.gd" id="2_bt47q"]
+[ext_resource type="Script" uid="uid://cqbimnwym5cbj" path="res://game/Scripts/System/censor_game_manager.gd" id="2_bt47q"]
 [ext_resource type="PackedScene" uid="uid://clci5lpjmykq8" path="res://game/scenes/empty_scene_DONOTTOUCH.tscn" id="3_b7if7"]
-[ext_resource type="PackedScene" uid="uid://1f0n25pmk3c7" path="res://game/scenes/TestScene.tscn" id="4_caerc"]
-[ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="5_u702p"]
+[ext_resource type="PackedScene" uid="uid://cmofbo13qg4di" path="res://addons/owens-godot-framework/test_game_data/scenes/test_scene.tscn" id="3_dubat"]
+[ext_resource type="PackedScene" uid="uid://ugd552efvil0" path="res://addons/dialogue_manager/test_scene.tscn" id="5_i7g3i"]
 [ext_resource type="PackedScene" uid="uid://bng6mi3uxpxlw" path="res://game/scenes/Levels/level_day_1.tscn" id="6_bt47q"]
 [ext_resource type="PackedScene" uid="uid://ctjk7fxtfdwok" path="res://game/scenes/Levels/level_day_2.tscn" id="7_b7if7"]
 [ext_resource type="PackedScene" uid="uid://ltxea6ppoyyy" path="res://game/scenes/censor_cursor.tscn" id="8_b7if7"]
 [ext_resource type="PackedScene" uid="uid://bgj0r6ax83fae" path="res://game/scenes/Menu.tscn" id="8_caerc"]
 [ext_resource type="PackedScene" uid="uid://b22btudpfgtef" path="res://game/scenes/GameOver.tscn" id="9_4jctn"]
-[ext_resource type="Script" uid="uid://cln483dmj7ov0" path="res://game/scripts/censor_soundtrack.gd" id="10_cwtu0"]
 [ext_resource type="PackedScene" uid="uid://ddf6hm7scxxpc" path="res://game/scenes/censor_loading_canvas.tscn" id="10_so055"]
 [ext_resource type="AudioStream" uid="uid://n8ibvfrop8yo" path="res://game/Assets/audio/static_loop.wav" id="11_2seke"]
+[ext_resource type="Script" path="res://game/Scripts/censor_soundtrack.gd" id="11_cwtu0"]
 [ext_resource type="AudioStream" uid="uid://b1gqi6a7fgd3h" path="res://game/Assets/audio/army_blue.wav" id="11_i7g3i"]
 [ext_resource type="AudioStream" uid="uid://cwsl43mgp0qgw" path="res://game/Assets/audio/birch-tree.wav" id="12_4jctn"]
-[ext_resource type="AudioStream" uid="uid://otgyih8yy3sx" path="res://game/Assets/audio/four_ruffles_and_flourishes_generals_march.wav" id="13_so055"]
-[ext_resource type="AudioStream" uid="uid://5k37mr0hbbls" path="res://game/Assets/audio/meadows.wav" id="14_dna1j"]
-[ext_resource type="AudioStream" uid="uid://ddfge7wx01hb0" path="res://game/Assets/audio/national_emblem.wav" id="15_y47rj"]
-[ext_resource type="AudioStream" uid="uid://piinsy1rml37" path="res://game/Assets/audio/tachanka.wav" id="16_ewwv8"]
-[ext_resource type="AudioStream" uid="uid://chly5va7qfe3d" path="res://game/Assets/audio/to_the_color.wav" id="17_kqrf8"]
 
 [node name="CensorGameManager" unique_id=1714877070 instance=ExtResource("1_fwnex")]
 script = ExtResource("2_bt47q")
 level_path_dict = Dictionary[String, PackedScene]({
-"": null,
 "Empty Test Level": ExtResource("3_b7if7"),
 "Game Over": ExtResource("9_4jctn"),
-"Menu": ExtResource("8_caerc"),
-"Platformer Test Level": ExtResource("4_caerc"),
-"Top Down Test Level": ExtResource("4_caerc"),
+"Platformer Test Level": ExtResource("3_dubat"),
+"Top Down Level": ExtResource("5_i7g3i"),
 "day_1_level": ExtResource("6_bt47q"),
 "day_2_level": ExtResource("7_b7if7"),
-"default_level": ExtResource("5_u702p")
+"default_level": ExtResource("8_caerc")
 })
 loading_canvas_scene = ExtResource("10_so055")
-initial_level = "day_1_level"
+initial_level = "default_level"
 mouse_cursor_scene = ExtResource("8_b7if7")
 
 [node name="CensorSoundtrack" type="Control" parent="." index="0" unique_id=1638382422]
@@ -43,6 +36,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("10_cwtu0")
-dynamic_tracks = Array[AudioStream]([ExtResource("11_i7g3i"), ExtResource("12_4jctn"), ExtResource("13_so055"), ExtResource("14_dna1j"), ExtResource("15_y47rj"), ExtResource("16_ewwv8"), ExtResource("17_kqrf8")])
+script = ExtResource("11_cwtu0")
+dynamic_tracks = Array[AudioStream]([ExtResource("11_i7g3i"), ExtResource("12_4jctn")])
 static_track = ExtResource("11_2seke")

@@ -5,9 +5,14 @@
 
 [node name="Instructions" type="Node2D" unique_id=1561055183]
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2064517360]
+offset_right = 950.0
+offset_bottom = 950.0
+rotation = -0.017453292
+scale = Vector2(0.6793018, 0.6793018)
+texture = ExtResource("2_wla24")
+
 [node name="Label" type="Label" parent="." unique_id=1914640731]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
 offset_left = 81.0
 offset_top = 59.0
 offset_right = 589.0
@@ -28,10 +33,3 @@ Todays truths:
 Additional information:
 The proletariat papers have been creating art that is improper. Let us not propagate such garbage"
 autowrap_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2064517360]
-offset_right = 950.0
-offset_bottom = 950.0
-rotation = -0.017453292
-scale = Vector2(0.6793018, 0.6793018)
-texture = ExtResource("2_wla24")

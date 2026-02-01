@@ -7,3 +7,4 @@ func _ready() -> void:
         text = "LOYALTY DEMONSTRATED."
 
     GameManager.mistakes_left = 3  # Reset mistakes for next game
+

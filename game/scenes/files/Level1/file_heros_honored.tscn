@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dbai6mw0hnlui"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_ss3pm"]
+[ext_resource type="Texture2D" uid="uid://c10x4nuhyo0s2" path="res://game/Assets/Level1/1.png" id="2_27yud"]
+[ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="2_dnjm4"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/scripts/data/attributes.gd" id="4_el5ep"]
+[ext_resource type="Resource" uid="uid://dfdbvjfqo785p" path="res://game/Attributes/traitor_rank.tres" id="5_klmwx"]
+[ext_resource type="Resource" uid="uid://bb4uuj5cehgoc" path="res://game/Attributes/traitor_name.tres" id="6_4ky58"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_ss3pm")]
+custom_minimum_size = Vector2(337, 418)
+anchor_right = 0.2934618
+anchor_bottom = 0.6454197
+offset_right = -1.0679932
+offset_bottom = -0.23199463
+file_title = "Heros Honoured"
+
+[node name="Panel" parent="." index="0" unique_id=2090312253]
+anchors_preset = -1
+anchor_right = 1.0037736
+anchor_bottom = 1.0030395
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
+offset_left = -8.0
+offset_top = -11.0
+offset_right = 810.0
+offset_bottom = 1006.0
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("2_27yud")
+
+[node name="DrawViewportContainer" parent="Panel" index="1" unique_id=522254512]
+anchor_right = 0.9962406
+anchor_bottom = 1.0065101
+
+[node name="Element" parent="Panel" index="2" unique_id=1151123996 instance=ExtResource("2_dnjm4")]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 178.0
+offset_right = 77.0
+offset_bottom = 185.0
+texture = null
+element_name = "Rank"
+attributes = Array[ExtResource("4_el5ep")]([ExtResource("5_klmwx")])
+
+[node name="Element2" parent="Panel" index="3" unique_id=1666651517 instance=ExtResource("2_dnjm4")]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 232.0
+offset_right = 110.0
+offset_bottom = 239.0
+texture = null
+element_name = "Rank"
+attributes = Array[ExtResource("4_el5ep")]([ExtResource("5_klmwx")])
+
+[node name="Element3" parent="Panel" index="4" unique_id=237290889 instance=ExtResource("2_dnjm4")]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 232.0
+offset_right = 110.0
+offset_bottom = 239.0
+texture = null
+element_name = "Name"
+attributes = Array[ExtResource("4_el5ep")]([ExtResource("6_4ky58")])
