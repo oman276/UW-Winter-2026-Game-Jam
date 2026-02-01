@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brsdutd5yyipp"]
 
 [ext_resource type="PackedScene" uid="uid://o4iyp1u4haag" path="res://addons/owens-godot-framework/tools/scenes/systems/OwenGameManager.tscn" id="1_fwnex"]
-[ext_resource type="Script" uid="uid://cqbimnwym5cbj" path="res://game/scripts/System/censor_game_manager.gd" id="2_bt47q"]
+[ext_resource type="Script" uid="uid://cqbimnwym5cbj" path="res://game/Scripts/System/censor_game_manager.gd" id="2_bt47q"]
 [ext_resource type="PackedScene" uid="uid://clci5lpjmykq8" path="res://game/scenes/empty_scene_DONOTTOUCH.tscn" id="3_b7if7"]
 [ext_resource type="PackedScene" uid="uid://1f0n25pmk3c7" path="res://game/scenes/TestScene.tscn" id="4_caerc"]
 [ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="5_u702p"]
