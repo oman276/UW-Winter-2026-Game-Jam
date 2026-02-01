@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ctjk7fxtfdwok"]
+
+[ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="1_omtkj"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="2_1xige"]
+[ext_resource type="Resource" uid="uid://dchg8g0t04ygx" path="res://game/Attributes/red_icon.tres" id="3_1tt3f"]
+[ext_resource type="PackedScene" uid="uid://b4i3a3ik8lla1" path="res://game/scenes/files/test_file_2.tscn" id="4_omtkj"]
+
+[node name="MainScene" unique_id=233102018 instance=ExtResource("1_omtkj")]
+attributes_must_exclude = Array[ExtResource("2_1xige")]([ExtResource("3_1tt3f")])
+files_to_load = Array[PackedScene]([ExtResource("4_omtkj")])
