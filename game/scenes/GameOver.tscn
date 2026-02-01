@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://b22btudpfgtef"]
+
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_brb07"]
+[ext_resource type="Texture2D" uid="uid://by0s2p0ir8jw2" path="res://game/sprites/wood_backdrop.jpg" id="2_axnlc"]
+[ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="3_epu4x"]
+[ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="4_gf4ye"]
+[ext_resource type="Script" uid="uid://bynku2a62gdtx" path="res://addons/owens-godot-framework/tools/scripts/owen_level_load_button.gd" id="5_sgbgo"]
+[ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="7_m3ffh"]
+[ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="8_brb07"]
+[ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="8_xqjwj"]
+[ext_resource type="Texture2D" uid="uid://c10x4nuhyo0s2" path="res://game/Assets/Level1/1.png" id="9_axnlc"]
+[ext_resource type="Texture2D" uid="uid://dc0s1rjpjxkmu" path="res://game/Assets/Level1/4.png" id="10_epu4x"]
+
+[sub_resource type="Theme" id="Theme_ftvng"]
+default_font_size = 19
+
+[sub_resource type="FontVariation" id="FontVariation_ftvng"]
+base_font = ExtResource("3_epu4x")
+
+[sub_resource type="Theme" id="Theme_30v5b"]
+default_font_size = 19
+
+[node name="GameOver" type="Node2D" unique_id=1931945144]
+script = ExtResource("1_brb07")
+use_dialogue_balloon = false
+
+[node name="MenuCtrl" type="Control" parent="." unique_id=303512371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuCtrl" unique_id=651401056]
+layout_mode = 1
+offset_left = -71.0
+offset_top = -64.0
+offset_right = 1243.0
+offset_bottom = 722.0
+texture = ExtResource("2_axnlc")
+expand_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MenuCtrl/TextureRect" unique_id=625471017]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.102000006
+anchor_top = 0.763
+anchor_right = 0.88500005
+anchor_bottom = 0.86800003
+offset_left = 168.972
+offset_top = 24.281982
+offset_right = -145.89001
+offset_bottom = 2.7519531
+theme = SubResource("Theme_ftvng")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/normal_font = SubResource("FontVariation_ftvng")
+text = "A Game by Ava Lynch, Nicole Planeta, Owen Gallagher, Saaz Ramsubhag"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MenuCtrl/TextureRect" unique_id=1885294201]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.231
+anchor_top = 0.347
+anchor_right = 0.77400005
+anchor_bottom = 0.56600004
+offset_left = -0.5339966
+offset_top = -81.742004
+offset_right = -0.036071777
+offset_bottom = 26.123962
+theme = SubResource("Theme_30v5b")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/normal_font = SubResource("FontVariation_ftvng")
+theme_override_font_sizes/normal_font_size = 114
+text = "EMPLOYMENT TERMINATED"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MenuCtrl/TextureRect" unique_id=1833639393]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33600003
+anchor_top = 0.65400004
+anchor_right = 0.66300005
+anchor_bottom = 0.785
+offset_left = 2.4959717
+offset_top = -1.0440063
+offset_right = 2.8179321
+offset_bottom = -6.01001
+theme = ExtResource("4_gf4ye")
+theme_override_font_sizes/font_size = 43
+text = "BEGIN AGAIN"
+script = ExtResource("5_sgbgo")
+level_name = "day_1_level"
+
+[node name="Coffee" type="Sprite2D" parent="." unique_id=1428010106]
+position = Vector2(166.00002, 28.999985)
+scale = Vector2(0.38978434, 0.38978434)
+texture = ExtResource("7_m3ffh")
+
+[node name="MagnifyingGlass" type="Sprite2D" parent="." unique_id=2127373260]
+position = Vector2(1084.0001, 484)
+rotation = -1.6776569
+scale = Vector2(0.38498288, 0.38498288)
+texture = ExtResource("8_xqjwj")
+
+[node name="Marker" type="Sprite2D" parent="." unique_id=1606186783]
+position = Vector2(74.99997, 515.99994)
+rotation = 2.5718539
+scale = Vector2(0.3619844, 0.3619844)
+texture = ExtResource("8_brb07")
+
+[node name="1" type="Sprite2D" parent="." unique_id=129556203]
+position = Vector2(1165.0001, 151.00003)
+rotation = -0.80019295
+scale = Vector2(0.27628362, 0.27628362)
+texture = ExtResource("9_axnlc")
+
+[node name="4" type="Sprite2D" parent="." unique_id=1020929103]
+position = Vector2(175, 634.00006)
+rotation = -0.45274532
+scale = Vector2(0.23941368, 0.2394137)
+texture = ExtResource("10_epu4x")
