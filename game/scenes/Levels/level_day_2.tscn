@@ -8,3 +8,4 @@
 [node name="MainScene" unique_id=233102018 instance=ExtResource("1_omtkj")]
 attributes_must_exclude = Array[ExtResource("2_1xige")]([ExtResource("3_1tt3f")])
 files_to_load = Array[PackedScene]([ExtResource("4_omtkj")])
+next_level = "day_1_level"
