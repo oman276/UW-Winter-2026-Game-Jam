@@ -40,7 +40,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_tovee")
 layout_mode = 1
 
 [node name="Element" parent="Panel" unique_id=1151123996 instance=ExtResource("2_21myl")]
-z_index = 2
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 63.0
