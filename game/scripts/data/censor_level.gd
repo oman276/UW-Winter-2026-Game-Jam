@@ -7,10 +7,17 @@ class_name CensorLevel
 @export var pickup_audioplayer : AudioStreamPlayer2D
 @export var files_to_load : Array[PackedScene] = []
 
+enum DrawMode {
+	NONE,
+	MARK,
+}
+
 @onready var rng = RandomNumberGenerator.new()
 
 @export var radio_dialogue: DialogueResource 
 var loaded_files : Array[File] = []
+
+@onready var current_draw_mode : DrawMode = DrawMode.NONE
 
 func _ready() -> void:
 	var balloon = DialogueManager.show_dialogue_balloon(radio_dialogue, "radio_dialogue")
@@ -44,6 +51,12 @@ func add_files() -> void:
 		instance.size = Vector2(200,200)
 		
 func _input(event: InputEvent) -> void:
+	# Reset draw mode when clicking outside of draggables/files while in MARK mode
+	if current_draw_mode == DrawMode.MARK:
+		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			if not _is_click_on_draggable_or_file():
+				print("clicked outside draggable or node, resetting draw mode")
+				set_draw_mode(DrawMode.NONE)
 	
 	if event.is_action("check_results"):
 		var results := evaluate_all_files()
@@ -101,3 +114,28 @@ func evaluate_file(file:File) -> FileResult:
 			
 	return result
 	
+func set_draw_mode(mode: DrawMode) -> void:
+	print("Setting draw mode to: %s" % mode)
+	current_draw_mode = mode
+	
+func get_draw_mode() -> DrawMode:
+	return current_draw_mode
+
+func _is_click_on_draggable_or_file() -> bool:
+	var mouse_pos = get_viewport().get_mouse_position()
+	
+	# Check all loaded files and their parent draggers
+	for file in loaded_files:
+		# Check if file's parent is a Dragger
+		var parent = file.get_parent()
+		if parent is Dragger:
+			var dragger_rect = Rect2(parent.global_position, parent.size)
+			if dragger_rect.has_point(mouse_pos):
+				return true
+		
+		# Check if click is on the file itself
+		var file_rect = Rect2(file.global_position, file.size)
+		if file_rect.has_point(mouse_pos):
+			return true
+	
+	return false

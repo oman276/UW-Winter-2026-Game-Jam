@@ -13,6 +13,9 @@ var direction := Vector2()
 
 func _gui_input(event):
 	if event is InputEventMouseButton:
+		if GameManager.current_level_node.get_draw_mode() != CensorLevel.DrawMode.NONE:
+			return
+		
 		if hovering and event.is_pressed():
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			direction = (get_viewport().get_mouse_position() - position).normalized()
