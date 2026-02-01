@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://by4ve60tao2ap"]
 
 [ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_8sxam"]
-[ext_resource type="Texture2D" uid="uid://blpsuuvh6te4v" path="res://icon.svg" id="2_xr8wl"]
 [ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="3_bdrb8"]
 [ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="3_q0h83"]
-[ext_resource type="Resource" uid="uid://cbs1660h4u6mv" path="res://game/Attributes/blue_icon.tres" id="4_hymbq"]
 [ext_resource type="Resource" uid="uid://c406n6fupsmfl" path="res://game/Attributes/red_guy.tres" id="6_q0h83"]
 [ext_resource type="Texture2D" uid="uid://cnm67htuohhlo" path="res://addons/dialogue_manager/assets/banner.png" id="7_hymbq"]
 
@@ -22,27 +20,15 @@ anchor_right = 1.580475
 anchor_bottom = 0.9339623
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel" index="0" unique_id=1109303827]
-layout_mode = 0
-offset_right = 600.0
-offset_bottom = 200.0
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
 texture = ExtResource("7_hymbq")
 
-[node name="Element" parent="Panel" index="2" unique_id=1151123996]
-offset_left = 55.0
-offset_top = 49.0
-offset_right = 183.0
-offset_bottom = 177.0
-texture = ExtResource("2_xr8wl")
-element_name = "Blue Icon"
-attributes = Array[ExtResource("3_q0h83")]([ExtResource("4_hymbq")])
-
-[node name="Element2" parent="Panel" index="3" unique_id=118614130 instance=ExtResource("3_bdrb8")]
+[node name="Element2" parent="Panel" index="1" unique_id=118614130 instance=ExtResource("3_bdrb8")]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
-offset_left = 330.0
-offset_top = 28.0
-offset_right = 430.0
-offset_bottom = 128.0
+offset_left = 291.0
+offset_top = 39.0
+offset_right = 391.0
+offset_bottom = 139.0
 element_name = "Red Guy"
 attributes = Array[ExtResource("3_q0h83")]([ExtResource("6_q0h83")])

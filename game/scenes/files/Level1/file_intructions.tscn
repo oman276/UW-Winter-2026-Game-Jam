@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bxljt58mgwn70"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_d50jg"]
+[ext_resource type="PackedScene" uid="uid://dnk0k7lmty18h" path="res://game/Assets/Level1/Instructions_1.tscn" id="6_qqhx5"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_d50jg")]
+custom_minimum_size = Vector2(450, 420)
+anchor_right = 0.3915521
+anchor_bottom = 0.64850616
+offset_right = -1.0679932
+offset_bottom = -0.23199463
+file_title = "Photo"
+
+[node name="Panel" parent="." index="0" unique_id=2090312253]
+anchors_preset = -1
+anchor_right = 1.0022222
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 296.8506
+offset_bottom = 367.55383
+scale = Vector2(0.435, 0.435)
+
+[node name="Instructions" parent="Panel" index="2" unique_id=1561055183 instance=ExtResource("6_qqhx5")]
+position = Vector2(-11, -15)
+scale = Vector2(0.71, 0.71)

@@ -20,7 +20,7 @@
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="15_t5ygl"]
 [ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="16_86ic4"]
 
-[node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
+[node name="MainScene2" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
 pickup_audioplayer = NodePath("AudioStreamPlayer2D")
 files_to_load = Array[PackedScene]([ExtResource("2_kqqv7")])
@@ -189,10 +189,10 @@ position = Vector2(0, 1.5258789e-05)
 script = ExtResource("11_reirr")
 
 [node name="MarkerToggle" parent="." unique_id=1939358221 instance=ExtResource("14_kqqv7")]
-offset_left = 420.0
-offset_top = 142.0
-offset_right = 420.0
-offset_bottom = 142.0
+offset_left = 1052.0
+offset_top = 110.0
+offset_right = 1052.0
+offset_bottom = 110.0
 scale = Vector2(0.355, 0.355)
 
 [node name="FileSubmit" type="Control" parent="." unique_id=1381138281]
@@ -259,10 +259,10 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Report/Control/MarginContainer" unique_id=260938246]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Report/Control/MarginContainer" unique_id=322680385]
 layout_mode = 2
 
-[node name="LabelHeader" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=233692592]
+[node name="LabelHeader" type="Label" parent="Report/Control/MarginContainer/VBoxContainer2" unique_id=233692592]
 layout_mode = 2
 theme = ExtResource("15_t5ygl")
 theme_override_fonts/font = ExtResource("16_86ic4")
@@ -270,32 +270,40 @@ theme_override_font_sizes/font_size = 21
 text = "Performance Report"
 horizontal_alignment = 1
 
-[node name="LabelCorrect" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=2059671311]
+[node name="LabelCorrect" type="Label" parent="Report/Control/MarginContainer/VBoxContainer2" unique_id=2059671311]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("15_t5ygl")
 text = "Documents sufficiently corrected: 4/3"
 autowrap_mode = 2
 
-[node name="LabelMistakes" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=1416186076]
+[node name="LabelMistakes" type="Label" parent="Report/Control/MarginContainer/VBoxContainer2" unique_id=1416186076]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("15_t5ygl")
 text = "Errors:"
 autowrap_mode = 2
 
-[node name="ErrorsVbox" type="VBoxContainer" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=1410887929]
+[node name="ScrollContainer" type="ScrollContainer" parent="Report/Control/MarginContainer/VBoxContainer2" unique_id=1916886720]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LabelPerformance" type="Label" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=252078493]
+[node name="VBoxContainer" type="VBoxContainer" parent="Report/Control/MarginContainer/VBoxContainer2/ScrollContainer" unique_id=260938246]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ErrorsVbox" type="VBoxContainer" parent="Report/Control/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer" unique_id=1410887929]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelPerformance" type="Label" parent="Report/Control/MarginContainer/VBoxContainer2" unique_id=252078493]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 theme = ExtResource("15_t5ygl")
 text = "Performance: Satisfactory"
 autowrap_mode = 2
 
-[node name="NextButton" type="Button" parent="Report/Control/MarginContainer/VBoxContainer" unique_id=984613292]
+[node name="NextButton" type="Button" parent="Report/Control/MarginContainer/VBoxContainer2" unique_id=984613292]
 custom_minimum_size = Vector2(130.08, 34.685)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -303,4 +311,4 @@ theme = ExtResource("15_t5ygl")
 text = "Go Home"
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]
-[connection signal="pressed" from="Report/Control/MarginContainer/VBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Report/Control/MarginContainer/VBoxContainer2/NextButton" to="." method="_on_next_button_pressed"]

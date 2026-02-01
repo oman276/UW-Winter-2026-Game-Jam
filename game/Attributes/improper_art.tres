@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Attribute" format=3 uid="uid://b5ylcr8ehwwv5"]
+
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="1_1gmin"]
+
+[resource]
+script = ExtResource("1_1gmin")
+name = "Traitor Name"
+metadata/_custom_type_script = "uid://boxnakuj3ms4u"

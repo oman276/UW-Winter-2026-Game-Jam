@@ -2,10 +2,10 @@ extends CenterContainer
 
 @export var print_debug := false
 
-@onready var correct_label := $Control/MarginContainer/VBoxContainer/LabelCorrect
-@onready var performance_label := $Control/MarginContainer/VBoxContainer/LabelPerformance
+@onready var correct_label := $Control/MarginContainer/VBoxContainer2/LabelCorrect
+@onready var performance_label := $Control/MarginContainer/VBoxContainer2/LabelPerformance
 @onready var mistake_label_scene : PackedScene = preload("res://game/scenes/Report/report_mistake_label.tscn")
-@onready var errors_vbox := $Control/MarginContainer/VBoxContainer/ErrorsVbox
+@onready var errors_vbox := $Control/MarginContainer/VBoxContainer2/ScrollContainer/VBoxContainer/ErrorsVbox
 
 func appear():
 	position.y = get_viewport_rect().size.y
