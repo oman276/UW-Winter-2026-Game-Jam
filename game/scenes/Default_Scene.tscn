@@ -1,22 +1,22 @@
 [gd_scene format=3 uid="uid://di7waos42g3hs"]
 
-[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_fbms8"]
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/Scripts/data/censor_level.gd" id="1_fbms8"]
 [ext_resource type="Texture2D" uid="uid://by0s2p0ir8jw2" path="res://game/sprites/wood_backdrop.jpg" id="2_1gvmw"]
 [ext_resource type="Resource" uid="uid://djs5s1asbbdxx" path="res://game/dialogue/radio_dialogue.dialogue" id="2_ipmk8"]
 [ext_resource type="PackedScene" uid="uid://by4ve60tao2ap" path="res://game/scenes/files/test_file_1.tscn" id="2_kqqv7"]
 [ext_resource type="Texture2D" uid="uid://cswuki0f3vgu5" path="res://game/sprites/10861471.png" id="3_v0lsd"]
 [ext_resource type="Texture2D" uid="uid://crr0sm6hrga1x" path="res://game/sprites/scissors.png" id="4_34woh"]
 [ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="4_s6sjy"]
-[ext_resource type="Script" path="res://game/Scripts/file_submit.gd" id="5_un5ke"]
+[ext_resource type="Script" uid="uid://dyk7iuvu61y82" path="res://game/Scripts/file_submit.gd" id="5_un5ke"]
 [ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="6_7ka50"]
 [ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="7_1nvu5"]
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
-[ext_resource type="Script" path="res://game/scenes/level_manager.gd" id="11_reirr"]
+[ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
 [ext_resource type="PackedScene" uid="uid://8ed1lu7caa5d" path="res://game/scenes/MarkerToggle.tscn" id="14_kqqv7"]
 [ext_resource type="Script" uid="uid://1teq5vwtkwj6" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_canvas_fade.gd" id="14_pv2m1"]
-[ext_resource type="Script" uid="uid://bguupictharbi" path="res://game/scripts/report.gd" id="15_ecnnx"]
+[ext_resource type="Script" uid="uid://bguupictharbi" path="res://game/Scripts/report.gd" id="15_ecnnx"]
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="15_t5ygl"]
 [ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="16_86ic4"]
 
@@ -209,7 +209,7 @@ layout_mode = 0
 offset_right = 200.0
 offset_bottom = 230.0
 mouse_filter = 1
-color = Color(0.14999998, 0.43333346, 1, 0.20392157)
+color = Color(0.14901961, 0.43529412, 1, 0)
 
 [node name="EndBackground" type="Node2D" parent="." unique_id=1317264974]
 z_index = 5

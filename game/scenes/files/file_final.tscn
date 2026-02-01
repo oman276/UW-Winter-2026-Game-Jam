@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dbai6mw0hnlui"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_ss3pm"]
+[ext_resource type="Texture2D" uid="uid://q047vd12bhxr" path="res://game/Assets/level3.png" id="2_3qkss"]
+[ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="2_dnjm4"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="4_el5ep"]
+[ext_resource type="Resource" uid="uid://wt2y77gfdl3g" path="res://game/Attributes/lies.tres" id="5_3qkss"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_ss3pm")]
+custom_minimum_size = Vector2(337, 418)
+anchor_right = 0.2934618
+anchor_bottom = 0.6454197
+offset_right = -1.0679932
+offset_bottom = -0.23199463
+file_title = "Heros Honoured"
+
+[node name="Panel" parent="." index="0" unique_id=2090312253]
+anchors_preset = -1
+anchor_right = 1.0037736
+anchor_bottom = 1.0030395
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
+offset_left = -12.0
+offset_top = -6.9999847
+offset_right = 806.0
+offset_bottom = 1010.0
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("2_3qkss")
+
+[node name="DrawViewportContainer" parent="Panel" index="1" unique_id=522254512]
+anchor_right = 0.9962406
+anchor_bottom = 1.0065101
+
+[node name="Element" parent="Panel" index="2" unique_id=1151123996 instance=ExtResource("2_dnjm4")]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 146.00002
+offset_right = 161.0
+offset_bottom = 321.0
+texture = null
+element_name = "Lies"
+attributes = Array[ExtResource("4_el5ep")]([ExtResource("5_3qkss")])

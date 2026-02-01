@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dhmv8ecok1ltw"]
+
+[ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="1_dd70g"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="2_dekd4"]
+[ext_resource type="Resource" uid="uid://wt2y77gfdl3g" path="res://game/Attributes/lies.tres" id="5_nhgeb"]
+[ext_resource type="PackedScene" uid="uid://dbai6mw0hnlui" path="res://game/scenes/files/file_final.tscn" id="7_4is36"]
+
+[sub_resource type="Resource" id="Resource_p2150"]
+metadata/__load_path__ = "res://game/dialogue/day1_dialogue.dialogue"
+
+[node name="MainScene" unique_id=233102018 instance=ExtResource("1_dd70g")]
+attributes_must_exclude = Array[ExtResource("2_dekd4")]([ExtResource("5_nhgeb")])
+files_to_load = Array[PackedScene]([ExtResource("7_4is36")])
+radio_dialogue = SubResource("Resource_p2150")
+use_dialogue_balloon = false
