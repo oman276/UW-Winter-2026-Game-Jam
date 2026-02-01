@@ -1,16 +1,50 @@
 [gd_scene format=3 uid="uid://1f0n25pmk3c7"]
 
-[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/scripts/data/censor_level.gd" id="1_oka5v"]
-[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="2_hkm4w"]
+[ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/Scripts/data/censor_level.gd" id="1_oka5v"]
+[ext_resource type="Resource" uid="uid://djs5s1asbbdxx" path="res://game/dialogue/radio_dialogue.dialogue" id="2_1e0qu"]
+[ext_resource type="PackedScene" uid="uid://by4ve60tao2ap" path="res://game/scenes/files/test_file_1.tscn" id="2_lhsp8"]
+[ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="4_dlxdu"]
+[ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="5_vtnd2"]
 
-[node name="EmptyTestScene" type="Node2D" unique_id=266287186]
+[node name="EmptyTestScene" type="Node2D" unique_id=266287186 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_oka5v")
+pickup_audioplayer = NodePath("AudioStreamPlayer2D")
+files_to_load = Array[PackedScene]([ExtResource("2_lhsp8")])
+radio_dialogue = ExtResource("2_1e0qu")
 
-[node name="BaseFile" parent="." unique_id=816497170 instance=ExtResource("2_hkm4w")]
-custom_minimum_size = Vector2(200, 200)
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 346.776
-offset_top = 211.884
-offset_right = 346.776
-offset_bottom = 211.884
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=844168086]
+position = Vector2(0, 1.5258789e-05)
+
+[node name="Dragger" parent="." unique_id=1728798680 instance=ExtResource("4_dlxdu")]
+offset_left = 208.0
+offset_top = 98.0
+offset_right = 248.0
+offset_bottom = 138.0
+
+[node name="TextureRect" type="TextureRect" parent="Dragger" unique_id=1266467162]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -307.5
+offset_right = 304.5
+offset_bottom = 307.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.475, 0.475)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("5_vtnd2")
+
+[node name="ColorRect" type="ColorRect" parent="Dragger" unique_id=1870568833]
+layout_mode = 0
+offset_left = 76.44473
+offset_top = -101.23251
+offset_right = 200.78654
+offset_bottom = 186.55127
+rotation = 0.8656833
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
