@@ -164,6 +164,7 @@ z_index = 5
 modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 649.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="EndFade" type="Node" parent="EndBackground" unique_id=1482865441 node_paths=PackedStringArray("items_to_fade")]
@@ -176,6 +177,7 @@ visible = false
 z_index = 5
 offset_right = 1152.0
 offset_bottom = 649.0
+mouse_filter = 2
 script = ExtResource("15_ecnnx")
 
 [node name="Control" type="Control" parent="Report" unique_id=264447799]

@@ -5,7 +5,8 @@ class_name CensorLevel
 @export var attributes_must_include : Array[Attribute] = []
 
 @export var pickup_audioplayer : AudioStreamPlayer2D
-@export var files_to_load : Array[PackedScene] = []
+@export var files_to_load : Array[PackedScene] = [] # Files
+@onready var dragger_scene : PackedScene = preload("res://game/scenes/dragger/dragger.tscn")
 
 enum DrawMode {
 	NONE,
@@ -71,6 +72,7 @@ func _input(event: InputEvent) -> void:
 	# Reset draw mode when clicking outside of draggables/files while in MARK mode
 	if current_draw_mode == DrawMode.MARK:
 		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			print("INPUTTTTT")
 			if not _is_click_on_draggable_or_file():
 				print("clicked outside draggable or node, resetting draw mode")
 				set_draw_mode(DrawMode.NONE)

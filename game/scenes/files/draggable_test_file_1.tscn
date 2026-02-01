@@ -6,11 +6,12 @@
 [node name="DraggableFile" unique_id=1728798680 instance=ExtResource("1_pvnu4")]
 custom_minimum_size = Vector2(379, 212)
 anchor_right = 0.32900003
-offset_right = -179.00803
-offset_bottom = -0.23200989
+offset_right = -0.008026123
+offset_bottom = 11.76799
 
 [node name="BaseFile" parent="." index="0" unique_id=816497170 instance=ExtResource("2_18uwg")]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 0.0
