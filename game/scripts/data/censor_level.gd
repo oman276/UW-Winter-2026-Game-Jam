@@ -83,8 +83,6 @@ func end_level() -> void:
 	var day_results := evaluate_all_files(submitted_files + loaded_files)
 	if current_draw_mode == DrawMode.MARK:
 		set_draw_mode(DrawMode.NONE)
-
-	var day_results := evaluate_all_files()
 	GameManager.mistakes_left -= day_results.total_files - day_results.correct_files
 	$Report.set_results(day_results)
 	
