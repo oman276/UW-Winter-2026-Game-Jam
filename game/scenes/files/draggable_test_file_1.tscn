@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b8rgfnkxo6fan"]
+
+[ext_resource type="PackedScene" uid="uid://bj06ngjh7rdfg" path="res://game/scenes/dragger/draggable_file.tscn" id="1_pvnu4"]
+[ext_resource type="PackedScene" uid="uid://by4ve60tao2ap" path="res://game/scenes/files/test_file_1.tscn" id="2_18uwg"]
+
+[node name="DraggableFile" unique_id=1728798680 instance=ExtResource("1_pvnu4")]
+custom_minimum_size = Vector2(379, 212)
+anchor_right = 0.32900003
+offset_right = -179.00803
+offset_bottom = -0.23200989
+
+[node name="BaseFile" parent="." index="0" unique_id=816497170 instance=ExtResource("2_18uwg")]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0

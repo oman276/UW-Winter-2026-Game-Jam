@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://fx0nrih4ilab" path="res://game/Scripts/data/censor_level.gd" id="1_fbms8"]
 [ext_resource type="Texture2D" uid="uid://by0s2p0ir8jw2" path="res://game/sprites/wood_backdrop.jpg" id="2_1gvmw"]
 [ext_resource type="Resource" uid="uid://djs5s1asbbdxx" path="res://game/dialogue/radio_dialogue.dialogue" id="2_ipmk8"]
+[ext_resource type="PackedScene" uid="uid://b8rgfnkxo6fan" path="res://game/scenes/files/draggable_test_file_1.tscn" id="2_n2ao8"]
 [ext_resource type="Texture2D" uid="uid://cswuki0f3vgu5" path="res://game/sprites/10861471.png" id="3_v0lsd"]
 [ext_resource type="Texture2D" uid="uid://crr0sm6hrga1x" path="res://game/sprites/scissors.png" id="4_34woh"]
 [ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="4_s6sjy"]
@@ -11,16 +12,18 @@
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
-[ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
 [ext_resource type="Texture2D" uid="uid://6adioi5qv66e" path="res://game/sprites/static.png" id="13_n2ao8"]
 [ext_resource type="Script" uid="uid://1teq5vwtkwj6" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_canvas_fade.gd" id="14_pv2m1"]
 [ext_resource type="Script" uid="uid://bguupictharbi" path="res://game/Scripts/report.gd" id="15_ecnnx"]
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="15_t5ygl"]
 [ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="16_86ic4"]
+[ext_resource type="PackedScene" uid="uid://8ed1lu7caa5d" path="res://game/scenes/MarkerToggle.tscn" id="12_pv2m1"]
+
 
 [node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
 pickup_audioplayer = NodePath("AudioStreamPlayer2D")
+files_to_load = Array[PackedScene]([ExtResource("2_n2ao8")])
 radio_dialogue = ExtResource("2_ipmk8")
 
 [node name="Wood_Sprite" type="Sprite2D" parent="." unique_id=475077457]
@@ -100,6 +103,7 @@ skew = -0.2788266
 texture = ExtResource("8_7ka50")
 
 [node name="MarkerObject" parent="." unique_id=1728798680 node_paths=PackedStringArray("attachedSprite", "soundPlayer") instance=ExtResource("8_1nvu5")]
+visible = false
 attachedSprite = NodePath("ColorRect/Marker")
 soundPlayer = NodePath("../AudioStreamPlayer2D")
 
@@ -147,12 +151,13 @@ position = Vector2(0, 1.5258789e-05)
 [node name="LevelManager" type="Node2D" parent="." unique_id=664034252]
 script = ExtResource("11_reirr")
 
-[node name="Static" type="Sprite2D" parent="." unique_id=1651594393]
-visible = false
-z_index = 2
-position = Vector2(580, 513)
-scale = Vector2(0.58802086, 0.5810305)
-texture = ExtResource("13_n2ao8")
+[node name="MarkerToggle" parent="." unique_id=1939358221 instance=ExtResource("12_pv2m1")]
+offset_left = 334.00003
+offset_top = 86.00003
+offset_right = 334.00003
+offset_bottom = 86.00003
+scale = Vector2(0.35999876, 0.35999876)
+
 
 [node name="EndBackground" type="Node2D" parent="." unique_id=1317264974]
 z_index = 5

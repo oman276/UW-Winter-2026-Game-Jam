@@ -28,6 +28,9 @@ func _on_panel_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton or event is InputEventMouseMotion:
 		var global_pos = get_global_mouse_position()
 		
+		if GameManager.current_level_node.get_draw_mode() != CensorLevel.DrawMode.MARK:
+			return 
+
 		# Forward to file's viewport container
 		viewport_container.handle_draw_input(event, global_pos)
 		
