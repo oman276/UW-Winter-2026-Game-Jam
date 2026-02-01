@@ -19,4 +19,4 @@ level_path_dict = Dictionary[String, PackedScene]({
 "day_2_level": ExtResource("7_b7if7"),
 "default_level": ExtResource("5_u702p")
 })
-initial_level = "default_level"
+initial_level = "day_1_level"

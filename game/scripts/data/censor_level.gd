@@ -6,7 +6,7 @@ class_name CensorLevel
 
 @export var pickup_audioplayer : AudioStreamPlayer2D
 @export var files_to_load : Array[PackedScene] = [] # Files
-@onready var dragger_scene : PackedScene = preload("res://game/scenes/dragger/dragger.tscn")
+@onready var dragger_packed : PackedScene = preload("res://game/scenes/dragger/dragger.tscn")
 
 enum DrawMode {
 	NONE,
@@ -20,6 +20,7 @@ var level_ended := false
 
 @export var radio_dialogue: DialogueResource 
 var loaded_files : Array[File] = []
+var loaded_file_draggers : Array[Dragger] = []
 
 @onready var current_draw_mode : DrawMode = DrawMode.NONE
 
@@ -36,27 +37,19 @@ func add_files() -> void:
 	var screen_size := get_viewport().get_visible_rect().size
 	
 	for file_packed in files_to_load:
-		var instance = file_packed.instantiate()
-		var file : File
-		if instance is Dragger:
-			for child in instance.get_children():
-				if child is File:
-					file = child
-			
-			if not file:
-				push_error("CensorLevel: Dragger instance does not contain a File child.")
-				continue
-		elif instance is File:
-			file = instance
-		else:
-			push_error("CensorLevel: PackedScene is neither a Dragger nor a File.")
-			continue
-
+		var file_dragger : Dragger = dragger_packed.instantiate()
+		var file : File = file_packed.instantiate()
+		
+		loaded_file_draggers.append(file_dragger)
 		loaded_files.append(file)
-		add_child(instance)
-		instance.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
+		
+		file_dragger.add_child(file)
+		add_child(file_dragger)
+		
+		# random position somewhat center of the screen
+		file_dragger.position = Vector2(100 + rng.randf_range(0, 0.6*screen_size.x),
 								100 + rng.randf_range(0, 0.6*screen_size.y))
-		instance.size = Vector2(200,200)
+		#instance.size = Vector2(200,200)
 		
 func end_level() -> void:
 	var day_results := evaluate_all_files()
