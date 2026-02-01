@@ -52,7 +52,8 @@ func add_files() -> void:
 		#instance.size = Vector2(200,200)
 		
 func end_level() -> void:
-	set_draw_mode(DrawMode.NONE)
+	if current_draw_mode == DrawMode.MARK:
+		set_draw_mode(DrawMode.NONE)
 
 	var day_results := evaluate_all_files()
 	GameManager.mistakes_left -= day_results.total_files - day_results.correct_files
