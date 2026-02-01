@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bng6mi3uxpxlw"]
 
 [ext_resource type="PackedScene" uid="uid://di7waos42g3hs" path="res://game/scenes/Default_Scene.tscn" id="1_aurq8"]
-[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="2_a7mg2"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/scripts/data/attributes.gd" id="2_a7mg2"]
 [ext_resource type="Resource" uid="uid://b5ylcr8ehwwv5" path="res://game/Attributes/improper_art.tres" id="3_htlil"]
 [ext_resource type="Resource" uid="uid://bb4uuj5cehgoc" path="res://game/Attributes/traitor_name.tres" id="4_ym0ei"]
 [ext_resource type="PackedScene" uid="uid://dbai6mw0hnlui" path="res://game/scenes/files/Level1/file_heros_honored.tscn" id="5_8lgqq"]
@@ -13,9 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://deey0cc0wjump" path="res://game/scenes/files/Level1/file_advertisment_1.tscn" id="9_ym0ei"]
 [ext_resource type="PackedScene" uid="uid://dj5cqx26cehsg" path="res://game/scenes/files/Level1/file_advertisment_2.tscn" id="10_87kit"]
 [ext_resource type="PackedScene" uid="uid://bxljt58mgwn70" path="res://game/scenes/files/Level1/file_intructions.tscn" id="13_ym0ei"]
+[ext_resource type="Resource" uid="uid://dftg7x0n81a5g" path="res://game/dialogue/day1_dialogue.dialogue" id="14_87kit"]
 
 [node name="MainScene" unique_id=233102018 instance=ExtResource("1_aurq8")]
 attributes_must_exclude = Array[ExtResource("2_a7mg2")]([ExtResource("3_htlil"), ExtResource("4_ym0ei"), ExtResource("5_87kit"), ExtResource("6_kl1kg"), null])
 files_to_load = Array[PackedScene]([ExtResource("5_8lgqq"), ExtResource("6_f0ca4"), ExtResource("7_dytki"), ExtResource("8_htlil"), ExtResource("9_ym0ei"), ExtResource("10_87kit"), ExtResource("13_ym0ei")])
-next_level = "day_2_level"
-radio_dialogue = ExtResource("7_a2rj0")
+radio_dialogue = ExtResource("14_87kit")
