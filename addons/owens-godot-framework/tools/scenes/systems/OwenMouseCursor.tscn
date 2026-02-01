@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bey3qxjuh0qpj"]
+[gd_scene format=3 uid="uid://bey3qxjuh0qpj"]
 
-[ext_resource type="Script" uid="uid://iyrqs0nfudro" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_mouse_cursor.gd" id="1_wxy73"]
-[ext_resource type="Texture2D" uid="uid://dkn7y71bnryy8" path="res://addons/owens-godot-framework/tools/assets/basic_colors.png" id="2_1e8rs"]
+[ext_resource type="Script" uid="uid://cwxo4lxwnukgk" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_mouse_cursor.gd" id="1_wxy73"]
+[ext_resource type="Texture2D" uid="uid://lgqmrxl41mu" path="res://addons/owens-godot-framework/tools/assets/basic_colors.png" id="2_1e8rs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkxvc"]
 atlas = ExtResource("2_1e8rs")
-region = Rect2(1, 5, 1, 1)
+region = Rect2(1, 4, 1, 1)
 
-[node name="OwenMouseCursor" type="Control"]
+[node name="OwenMouseCursor" type="Control" unique_id=788423496]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_wxy73")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=360695573]
 z_index = 100
 texture_filter = 1
 scale = Vector2(5, 5)
