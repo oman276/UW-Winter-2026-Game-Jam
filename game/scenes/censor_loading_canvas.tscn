@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ddf6hm7scxxpc"]
+
+[ext_resource type="PackedScene" uid="uid://ysnme2weplc3" path="res://addons/owens-godot-framework/tools/scenes/systems/OwenLoadingCanvas.tscn" id="1_227jx"]
+[ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="2_5o0eb"]
+[ext_resource type="Texture2D" uid="uid://c10x4nuhyo0s2" path="res://game/Assets/Level1/1.png" id="3_wigdq"]
+[ext_resource type="Texture2D" uid="uid://45cs4pg1g1yp" path="res://game/Assets/Level1/2.png" id="4_et7us"]
+[ext_resource type="Texture2D" uid="uid://coqfmud7w1w6w" path="res://game/Assets/Level1/3.png" id="5_hv6jb"]
+[ext_resource type="Texture2D" uid="uid://dc0s1rjpjxkmu" path="res://game/Assets/Level1/4.png" id="6_xnxee"]
+[ext_resource type="Texture2D" uid="uid://107sdxatpwku" path="res://game/Assets/Level1/5.png" id="7_2sost"]
+[ext_resource type="Texture2D" uid="uid://bherdyh2a7b1w" path="res://game/Assets/Level1/6.png" id="8_6t7qu"]
+
+[node name="CensorLoadingCanvas" unique_id=763580780 instance=ExtResource("1_227jx")]
+
+[node name="RichTextLabel" parent="TextureRect" index="0"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.83100003
+offset_left = -5.0
+offset_top = -1.4880371
+theme_override_fonts/normal_font = ExtResource("2_5o0eb")
+text = "[center]Loading...[/center]"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" index="1" unique_id=805972486]
+layout_mode = 0
+offset_left = 98.000015
+offset_top = -138.0
+offset_right = 916.0
+offset_bottom = 879.0
+rotation = 0.505763
+scale = Vector2(0.4799996, 0.4799996)
+texture = ExtResource("3_wigdq")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" index="2" unique_id=1976450891]
+z_index = 2
+layout_mode = 0
+offset_left = 125.99999
+offset_top = 177.00002
+offset_right = 1008.0
+offset_bottom = 1257.0
+rotation = -0.61325175
+scale = Vector2(0.4799996, 0.4799996)
+texture = ExtResource("4_et7us")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect" index="3" unique_id=1173002062]
+z_index = 2
+layout_mode = 0
+offset_left = 868.0
+offset_top = 58.0
+offset_right = 1994.0
+offset_bottom = 1138.0
+rotation = 0.20602638
+scale = Vector2(0.39466435, 0.39466435)
+texture = ExtResource("5_hv6jb")
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect" index="4" unique_id=1617199810]
+z_index = 2
+layout_mode = 0
+offset_left = 38.000008
+offset_top = 312.0
+offset_right = 1164.0
+offset_bottom = 1392.0
+rotation = 0.448401
+scale = Vector2(0.39466435, 0.39466435)
+texture = ExtResource("6_xnxee")
+
+[node name="TextureRect5" type="TextureRect" parent="TextureRect" index="5" unique_id=1073925322]
+z_index = 2
+layout_mode = 0
+offset_left = 562.0
+offset_top = -122.00002
+offset_right = 1688.0
+offset_bottom = 958.0
+rotation = 0.20602638
+scale = Vector2(0.39466435, 0.39466435)
+texture = ExtResource("7_2sost")
+
+[node name="TextureRect6" type="TextureRect" parent="TextureRect" index="6" unique_id=1997947260]
+z_index = 2
+layout_mode = 0
+offset_left = 277.0
+offset_top = 440.00003
+offset_right = 1403.0
+offset_bottom = 1520.0
+rotation = -0.41362965
+scale = Vector2(0.31693852, 0.31693852)
+texture = ExtResource("8_6t7qu")
