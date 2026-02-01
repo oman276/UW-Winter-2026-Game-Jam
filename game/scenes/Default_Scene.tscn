@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
 [ext_resource type="PackedScene" uid="uid://8ed1lu7caa5d" path="res://game/scenes/MarkerToggle.tscn" id="12_pv2m1"]
 
+
 [node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
 pickup_audioplayer = NodePath("AudioStreamPlayer2D")
@@ -28,6 +29,7 @@ scale = Vector2(0.6064815, 0.6064815)
 texture = ExtResource("2_1gvmw")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=2000384918]
+visible = false
 modulate = Color(1, 0, 1, 1)
 position = Vector2(265, 248)
 rotation = 2.4240887
@@ -151,5 +153,6 @@ offset_top = 86.00003
 offset_right = 334.00003
 offset_bottom = 86.00003
 scale = Vector2(0.35999876, 0.35999876)
+
 
 [connection signal="mouse_exited" from="ClockObject" to="ClockObject" method="_on_mouse_exited"]
