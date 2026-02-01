@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ctjk7fxtfdwok" path="res://game/scenes/Levels/level_day_2.tscn" id="7_b7if7"]
 [ext_resource type="PackedScene" uid="uid://ltxea6ppoyyy" path="res://game/scenes/censor_cursor.tscn" id="8_b7if7"]
 [ext_resource type="PackedScene" uid="uid://bgj0r6ax83fae" path="res://game/scenes/Menu.tscn" id="8_caerc"]
-[ext_resource type="Script" path="res://game/scripts/censor_soundtrack.gd" id="10_cwtu0"]
+[ext_resource type="Script" uid="uid://cln483dmj7ov0" path="res://game/scripts/censor_soundtrack.gd" id="10_cwtu0"]
 [ext_resource type="AudioStream" uid="uid://n8ibvfrop8yo" path="res://game/Assets/audio/static_loop.wav" id="11_2seke"]
 [ext_resource type="AudioStream" uid="uid://b1gqi6a7fgd3h" path="res://game/Assets/audio/army_blue.wav" id="11_i7g3i"]
 [ext_resource type="AudioStream" uid="uid://cwsl43mgp0qgw" path="res://game/Assets/audio/birch-tree.wav" id="12_4jctn"]

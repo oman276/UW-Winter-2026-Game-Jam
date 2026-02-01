@@ -23,7 +23,7 @@ func _ready() -> void:
 	static_player.stream = static_track
 	
 	static_player.volume_db = -15
-	dynamic_player.volume_db = -10
+	dynamic_player.volume_db = -15
 	
 	# static_track.loop = true
 	static_player.play()
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 func _dynamic_finished() -> void:
 	# Schedule the next dynamic track
 	var wait_time = randf_range(min_time_between_tracks, max_time_between_tracks)
-	print("CensorSoundtrack: Scheduling next dynamic track")
+	print("CensorSoundtrack: Scheduling next dynamic track for ", wait_time, " seconds.")
 	next_track_timer.wait_time = wait_time
 	next_track_timer.one_shot = true
 	next_track_timer.start()
