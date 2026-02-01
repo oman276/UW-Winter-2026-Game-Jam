@@ -1,28 +1,30 @@
 [gd_scene format=3 uid="uid://b3gqvw3k3j8jn"]
 
 [ext_resource type="Script" uid="uid://d4kbw0csogdau" path="res://game/Scripts/files/file.gd" id="1_tovee"]
-[ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="2_21myl"]
 [ext_resource type="PackedScene" uid="uid://ca2gutxl0nrvb" path="res://game/scenes/Drawing/draw_viewport_container.tscn" id="3_21myl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tovee"]
-bg_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
+bg_color = Color(0.72, 0.72, 0.72, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [node name="BaseFile" type="Control" unique_id=816497170]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 3
-anchor_right = 0.17400001
-anchor_bottom = 0.30900002
+anchor_right = 0.2113264
+anchor_bottom = 0.4509753
 offset_right = -0.4480133
 offset_bottom = -0.23200989
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
+size_flags_vertical = 0
 mouse_filter = 1
 script = ExtResource("1_tovee")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=2090312253]
 clip_contents = true
@@ -36,13 +38,11 @@ pivot_offset = Vector2(20, 20)
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_tovee")
 
+[node name="BackgroundTexture" type="TextureRect" parent="Panel" unique_id=1839488067]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+expand_mode = 1
+
 [node name="DrawViewportContainer" parent="Panel" unique_id=522254512 instance=ExtResource("3_21myl")]
 layout_mode = 1
-
-[node name="Element" parent="Panel" unique_id=1151123996 instance=ExtResource("2_21myl")]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 0
-offset_left = 63.0
-offset_top = 60.0
-offset_right = 163.0
-offset_bottom = 160.0

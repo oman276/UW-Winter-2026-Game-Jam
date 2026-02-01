@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://2h6bp18b7d7c"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_jeqvp"]
+[ext_resource type="Texture2D" uid="uid://dc0s1rjpjxkmu" path="res://game/Assets/Level1/4.png" id="2_jeqvp"]
+[ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="3_hacp3"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="4_6uq72"]
+[ext_resource type="Resource" uid="uid://bb4uuj5cehgoc" path="res://game/Attributes/traitor_name.tres" id="6_lxrow"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_jeqvp")]
+custom_minimum_size = Vector2(125, 155)
+anchor_right = 0.10943402
+anchor_bottom = 0.23955555
+offset_right = -1.0679932
+offset_bottom = -0.23199463
+file_title = "Photo"
+
+[node name="Panel" parent="." index="0" unique_id=2090312253]
+anchors_preset = -1
+anchor_right = 1.0039841
+anchor_bottom = 1.0031847
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
+offset_left = -2.0
+offset_top = -4.0
+offset_right = 296.8506
+offset_bottom = 367.55383
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("2_jeqvp")
+
+[node name="Element3" parent="Panel" index="2" unique_id=237290889 instance=ExtResource("3_hacp3")]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 34.000015
+offset_right = 84.0
+offset_bottom = 100.000015
+texture = null
+element_name = "Name"
+attributes = Array[ExtResource("4_6uq72")]([ExtResource("6_lxrow")])

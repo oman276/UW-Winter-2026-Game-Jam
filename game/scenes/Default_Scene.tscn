@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cswuki0f3vgu5" path="res://game/sprites/10861471.png" id="3_v0lsd"]
 [ext_resource type="Texture2D" uid="uid://crr0sm6hrga1x" path="res://game/sprites/scissors.png" id="4_34woh"]
 [ext_resource type="Texture2D" uid="uid://chwc6vjt4l7ul" path="res://game/sprites/magnifying_glass.png" id="4_s6sjy"]
-[ext_resource type="Script" uid="uid://dyk7iuvu61y82" path="res://game/Scripts/file_submit.gd" id="5_un5ke"]
+[ext_resource type="Script" path="res://game/Scripts/file_submit.gd" id="5_un5ke"]
 [ext_resource type="Texture2D" uid="uid://ci6jo42g3keiy" path="res://game/sprites/marker.png" id="6_7ka50"]
 [ext_resource type="Texture2D" uid="uid://75dfcipnroyd" path="res://game/sprites/coffee.png" id="7_1nvu5"]
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="8_1nvu5"]
@@ -20,7 +20,7 @@
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="15_t5ygl"]
 [ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="16_86ic4"]
 
-[node name="MainScene" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
+[node name="MainScene2" type="Node2D" unique_id=233102018 node_paths=PackedStringArray("pickup_audioplayer")]
 script = ExtResource("1_fbms8")
 pickup_audioplayer = NodePath("AudioStreamPlayer2D")
 files_to_load = Array[PackedScene]([ExtResource("2_kqqv7")])
@@ -190,10 +190,10 @@ position = Vector2(0, 1.5258789e-05)
 script = ExtResource("11_reirr")
 
 [node name="MarkerToggle" parent="." unique_id=1939358221 instance=ExtResource("14_kqqv7")]
-offset_left = 420.0
-offset_top = 142.0
-offset_right = 420.0
-offset_bottom = 142.0
+offset_left = 1052.0
+offset_top = 110.0
+offset_right = 1052.0
+offset_bottom = 110.0
 scale = Vector2(0.355, 0.355)
 
 [node name="FileSubmit" type="Control" parent="." unique_id=1381138281]

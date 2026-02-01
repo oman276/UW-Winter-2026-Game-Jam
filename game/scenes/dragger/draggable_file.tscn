@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj06ngjh7rdfg"]
 
 [ext_resource type="PackedScene" uid="uid://ckdlvn51bopau" path="res://game/scenes/dragger/dragger.tscn" id="1_he1bl"]
-[ext_resource type="Script" uid="uid://dw8pydp4fuifm" path="res://game/scenes/dragger/draggable_file.gd" id="2_he1bl"]
+[ext_resource type="Script" path="res://game/scenes/dragger/draggable_file.gd" id="2_he1bl"]
 
 [node name="DraggableFile" unique_id=1728798680 instance=ExtResource("1_he1bl")]
 custom_minimum_size = Vector2(200, 200)
@@ -11,3 +11,4 @@ anchor_bottom = 0.30900002
 offset_right = -160.44801
 offset_bottom = -160.23201
 script = ExtResource("2_he1bl")
+metadata/_edit_use_anchors_ = true

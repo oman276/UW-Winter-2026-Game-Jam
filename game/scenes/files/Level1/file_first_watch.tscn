@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b4wh165tixyos"]
+
+[ext_resource type="PackedScene" uid="uid://b3gqvw3k3j8jn" path="res://game/scenes/files/BaseFile.tscn" id="1_mkcwm"]
+[ext_resource type="Texture2D" uid="uid://45cs4pg1g1yp" path="res://game/Assets/Level1/2.png" id="2_mkcwm"]
+[ext_resource type="PackedScene" uid="uid://mto2lxoo8q61" path="res://game/scenes/files/BaseElement.tscn" id="3_84nl1"]
+[ext_resource type="Script" uid="uid://boxnakuj3ms4u" path="res://game/Scripts/data/attributes.gd" id="4_7xdc0"]
+[ext_resource type="Resource" uid="uid://wt2y77gfdl3g" path="res://game/Attributes/lies.tres" id="5_wc3ue"]
+
+[node name="BaseFile" unique_id=816497170 instance=ExtResource("1_mkcwm")]
+custom_minimum_size = Vector2(348, 432)
+anchor_right = 0.3030104
+anchor_bottom = 0.6670247
+offset_right = -1.0679932
+offset_bottom = -0.23199463
+file_title = "Front Page"
+
+[node name="Panel" parent="." index="0" unique_id=2090312253]
+anchors_preset = -1
+anchor_right = 1.0037736
+anchor_bottom = 1.0030395
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundTexture" parent="Panel" index="0" unique_id=1839488067]
+offset_left = -13.0
+offset_top = -17.999985
+offset_right = 869.0
+offset_bottom = 1062.0
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("2_mkcwm")
+
+[node name="Element" parent="Panel" index="2" unique_id=1151123996 instance=ExtResource("3_84nl1")]
+layout_mode = 0
+offset_left = 28.440361
+offset_top = 138.53212
+offset_right = 168.80734
+offset_bottom = 258.71564
+texture = null
+element_name = "Lies"
+attributes = Array[ExtResource("4_7xdc0")]([ExtResource("5_wc3ue")])
