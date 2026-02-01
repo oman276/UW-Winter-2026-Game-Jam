@@ -18,3 +18,4 @@
 attributes_must_exclude = Array[ExtResource("2_a7mg2")]([ExtResource("3_htlil"), ExtResource("4_ym0ei"), ExtResource("5_87kit"), ExtResource("6_kl1kg"), null])
 files_to_load = Array[PackedScene]([ExtResource("5_8lgqq"), ExtResource("6_f0ca4"), ExtResource("7_dytki"), ExtResource("8_htlil"), ExtResource("9_ym0ei"), ExtResource("10_87kit"), ExtResource("13_ym0ei")])
 next_level = "day_2_level"
+radio_dialogue = ExtResource("7_a2rj0")
