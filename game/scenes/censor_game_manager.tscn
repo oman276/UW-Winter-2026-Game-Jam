@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bgj0r6ax83fae" path="res://game/scenes/Menu.tscn" id="8_caerc"]
 [ext_resource type="PackedScene" uid="uid://b22btudpfgtef" path="res://game/scenes/GameOver.tscn" id="9_4jctn"]
 [ext_resource type="Script" uid="uid://cln483dmj7ov0" path="res://game/scripts/censor_soundtrack.gd" id="10_cwtu0"]
+[ext_resource type="PackedScene" uid="uid://ddf6hm7scxxpc" path="res://game/scenes/censor_loading_canvas.tscn" id="10_so055"]
 [ext_resource type="AudioStream" uid="uid://n8ibvfrop8yo" path="res://game/Assets/audio/static_loop.wav" id="11_2seke"]
 [ext_resource type="AudioStream" uid="uid://b1gqi6a7fgd3h" path="res://game/Assets/audio/army_blue.wav" id="11_i7g3i"]
 [ext_resource type="AudioStream" uid="uid://cwsl43mgp0qgw" path="res://game/Assets/audio/birch-tree.wav" id="12_4jctn"]
@@ -33,6 +34,7 @@ level_path_dict = Dictionary[String, PackedScene]({
 "day_2_level": ExtResource("7_b7if7"),
 "default_level": ExtResource("5_u702p")
 })
+loading_canvas_scene = ExtResource("10_so055")
 initial_level = "day_1_level"
 mouse_cursor_scene = ExtResource("8_b7if7")
 
