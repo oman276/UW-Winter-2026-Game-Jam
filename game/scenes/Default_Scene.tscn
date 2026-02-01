@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
 [ext_resource type="PackedScene" uid="uid://8ed1lu7caa5d" path="res://game/scenes/MarkerToggle.tscn" id="14_kqqv7"]
 [ext_resource type="Script" uid="uid://1teq5vwtkwj6" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_canvas_fade.gd" id="14_pv2m1"]
-[ext_resource type="Script" uid="uid://bguupictharbi" path="res://game/Scripts/report.gd" id="15_ecnnx"]
+[ext_resource type="Script" path="res://game/Scripts/report.gd" id="15_ecnnx"]
 [ext_resource type="Theme" uid="uid://cefn5ce42lrbg" path="res://game/Resources/ui_theme.tres" id="15_t5ygl"]
 [ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="16_86ic4"]
 
