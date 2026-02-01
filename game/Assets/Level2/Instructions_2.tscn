@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ckce77o7adgi3"]
+
+[ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="1_h6i8q"]
+[ext_resource type="Texture2D" uid="uid://dbhxp3jsy60pw" path="res://game/scenes/instruction_paper.png" id="2_wk3oc"]
+
+[node name="Instructions" type="Node2D" unique_id=1561055183]
+
+[node name="Label" type="Label" parent="." unique_id=1914640731]
+modulate = Color(0.014799306, 0.047180235, 0.1299581, 1)
+z_index = 1
+offset_left = 81.0
+offset_top = 59.0
+offset_right = 589.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("1_h6i8q")
+theme_override_font_sizes/font_size = 21
+text = "We have always been at war with Cordovia. Please corroborate this.
+
+The Party makes no mistakes.
+
+Todays truths:
+	- Please remove references to these men: Daniel Demidov, Vladislav Bazarov
+	-  This was is supported among the people
+	- Our government does not use violent measures
+
+Additional information:
+	- Please remove indecent parts of photos
+	- Signs of material wealth, such as jewelry, are undignified
+- References to drink are unseemly"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2064517360]
+offset_right = 950.0
+offset_bottom = 950.0
+rotation = -0.017453292
+scale = Vector2(0.6793018, 0.6793018)
+texture = ExtResource("2_wk3oc")
