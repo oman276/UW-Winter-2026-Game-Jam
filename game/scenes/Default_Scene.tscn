@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chhgpvepfe1xw" path="res://game/sprites/nixie_clock.png" id="8_7ka50"]
 [ext_resource type="Texture2D" uid="uid://81ub6qtpgu6p" path="res://game/sprites/files.png" id="10_ewyar"]
 [ext_resource type="Script" uid="uid://cfuhafbpryxat" path="res://game/scenes/level_manager.gd" id="11_reirr"]
+[ext_resource type="PackedScene" uid="uid://dnk0k7lmty18h" path="res://game/Assets/Level1/Instructions_1.tscn" id="13_0obq2"]
 [ext_resource type="PackedScene" uid="uid://8ed1lu7caa5d" path="res://game/scenes/MarkerToggle.tscn" id="14_kqqv7"]
 [ext_resource type="Script" uid="uid://1teq5vwtkwj6" path="res://addons/owens-godot-framework/tools/scripts/systems/owen_canvas_fade.gd" id="14_pv2m1"]
 [ext_resource type="Script" uid="uid://bguupictharbi" path="res://game/Scripts/report.gd" id="15_ecnnx"]
@@ -90,6 +91,7 @@ color = Color(1, 1, 1, 0)
 [node name="ClockObject" parent="." unique_id=783378228 node_paths=PackedStringArray("soundPlayer") instance=ExtResource("8_1nvu5")]
 process_priority = 1
 process_physics_priority = 1
+visible = false
 custom_minimum_size = Vector2(5, 5)
 offset_left = 757.0
 offset_top = 77.0
@@ -155,6 +157,7 @@ offset_bottom = 488.0
 soundPlayer = NodePath("../AudioStreamPlayer2D")
 
 [node name="TextureRect" type="TextureRect" parent="MagnifyingObject" unique_id=681617181]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -173,6 +176,7 @@ mouse_filter = 2
 texture = ExtResource("4_s6sjy")
 
 [node name="ColorRect" type="ColorRect" parent="MagnifyingObject" unique_id=860671419]
+visible = false
 layout_mode = 0
 offset_left = -177.0
 offset_top = 111.000015
@@ -181,6 +185,10 @@ offset_bottom = 264.94415
 rotation = -0.7452556
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
+
+[node name="Instructions" parent="MagnifyingObject" unique_id=1561055183 instance=ExtResource("13_0obq2")]
+position = Vector2(-129, -212)
+scale = Vector2(0.6, 0.6)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2078087875]
 position = Vector2(0, 1.5258789e-05)

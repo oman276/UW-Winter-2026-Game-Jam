@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cefn5ce42lrbg"]
 
 [ext_resource type="FontFile" uid="uid://cb544qc5jvql4" path="res://game/fonts/TypoSlab Irregular Demo.otf" id="1_tnpjs"]
-[ext_resource type="FontFile" uid="uid://43kb6trq05y6" path="res://game/fonts/atwriter.ttf" id="2_6g52y"]
+[ext_resource type="FontFile" uid="uid://d0mu0rwvsmthd" path="res://game/fonts/ELEGANT TYPEWRITER Regular.ttf" id="2_6g52y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np61u"]
 content_margin_left = 4.0

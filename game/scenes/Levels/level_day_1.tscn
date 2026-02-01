@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://2h6bp18b7d7c" path="res://game/scenes/files/Level1/file_photo.tscn" id="8_htlil"]
 [ext_resource type="PackedScene" uid="uid://deey0cc0wjump" path="res://game/scenes/files/Level1/file_advertisment_1.tscn" id="9_ym0ei"]
 [ext_resource type="PackedScene" uid="uid://dj5cqx26cehsg" path="res://game/scenes/files/Level1/file_advertisment_2.tscn" id="10_87kit"]
-[ext_resource type="PackedScene" uid="uid://bxljt58mgwn70" path="res://game/scenes/files/Level1/file_intructions.tscn" id="13_ym0ei"]
 [ext_resource type="Resource" uid="uid://dftg7x0n81a5g" path="res://game/dialogue/day1_dialogue.dialogue" id="14_87kit"]
 
 [node name="MainScene" unique_id=233102018 instance=ExtResource("1_aurq8")]
