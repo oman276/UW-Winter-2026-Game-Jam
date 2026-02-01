@@ -26,13 +26,16 @@ var loaded_file_draggers : Array[DraggerFile] = []
 @onready var current_draw_mode : DrawMode = DrawMode.NONE
 @onready var current_drag_object : Dragger = null
 
+@export var use_dialogue_balloon : bool = true
+
 # Signal emitted when draw mode changes
 # Parameters: new_mode (DrawMode), is_active (bool), mouse_position (Vector2)
 signal draw_mode_changed(new_mode: DrawMode, is_active: bool, mouse_position: Vector2)
 
 func _ready() -> void:
-	var balloon = DialogueManager.show_dialogue_balloon(radio_dialogue, "radio_dialogue")
-	GameManager.current_level_node.add_child(balloon)
+	if use_dialogue_balloon:
+		var balloon = DialogueManager.show_dialogue_balloon(radio_dialogue, "radio_dialogue")
+		GameManager.current_level_node.add_child(balloon)
 	add_files()
 	var cursor = GameManager.mouse_cursor as CensorCursor
 	if cursor:
