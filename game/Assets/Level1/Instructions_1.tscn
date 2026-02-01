@@ -6,6 +6,7 @@
 [node name="Instructions" type="Node2D" unique_id=1561055183]
 
 [node name="Label" type="Label" parent="." unique_id=1914640731]
+modulate = Color(0, 0, 0, 1)
 z_index = 1
 offset_left = 81.0
 offset_top = 59.0
